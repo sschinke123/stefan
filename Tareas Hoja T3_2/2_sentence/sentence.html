@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentence Analyzer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      button {
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Enter a Sentence</h1>
+
+    <!-- Text area for user input -->
+    <textarea
+      id="userSentence"
+      rows="4"
+      cols="50"
+      placeholder="Enter your sentence here..."
+    ></textarea>
+    <br />
+    <button onclick="analyzeSentence()">Analyze Sentence</button>
+
+    <script>
+      function analyzeSentence() {
+        // Get the user's sentence
+        const sentence = document.getElementById("userSentence").value;
+
+        // Check if the input is empty
+        if (sentence.trim() === "") {
+          alert("Please enter a sentence.");
+          return;
+        }
+
+        // Split the sentence into words
+        const words = sentence.split(/\s+/);
+
+        // Get the first and last words
+        const firstWord = words[0];
+        const lastWord = words[words.length - 1];
+
+        // Get the total number of words
+        const totalWords = words.length;
+
+        // Sort the words alphabetically and join with hyphens
+        const sortedWords = words.slice().sort();
+        const sortedWordsWithHyphens = sortedWords.join(" - ");
+
+        // Open a new window to display the results
+        const newWindow = window.open("", "_blank", "width=600,height=400");
+        newWindow.document.write("<h1>Sentence Analysis</h1>");
+        newWindow.document.write(
+          `<p><strong>First word:</strong> ${firstWord}</p>`
+        );
+        newWindow.document.write(
+          `<p><strong>Last word:</strong> ${lastWord}</p>`
+        );
+        newWindow.document.write(
+          `<p><strong>Total number of words:</strong> ${totalWords}</p>`
+        );
+        newWindow.document.write(
+          `<p><strong>Sorted words (separated by hyphens):</strong> ${sortedWordsWithHyphens}</p>`
+        );
+      }
+    </script>
+  </body>
+</html>

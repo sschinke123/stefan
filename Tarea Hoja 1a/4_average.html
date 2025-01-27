@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num_1 = Number(prompt("A 1. number from 0 to 10"));
+      let num_2 = Number(prompt("A 2. number from 0 to 10"));
+
+      let average = (num_1 + num_2) / 2;
+
+      if (average >= 0 && average < 5) {
+        alert(average + " - Suspens (entre 0 i menys que 5)");
+      } else if (average >= 5 && average < 6) {
+        alert(average + " - Aprovat (entre 5 i menys que 6)");
+      } else if (average >= 6 && average < 7) {
+        alert(average + " - Bé (entre 6 i menys que 7)");
+      } else if (average >= 7 && average < 9) {
+        alert(average + " - Notable (entre 7 i menys que 9)");
+      } else if (average >= 9 && average <= 10) {
+        alert(average + " - Excel·lent (de 9 a 10 inclosos)");
+      } else {
+        alert("REMINDER: Just numbers from 0 to 10 are valid");
+      }
+    </script>
+  </body>
+</html>

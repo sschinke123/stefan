@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        height: 50px;
+        width: 200px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="TurnOn()">ON</button>
+    <button onclick="TurnOff()">OFF</button>
+    <button onclick="ShowModal()">Toggle with Modal</button>
+    <img
+      src="../Images_T2B/apagada.gif"
+      alt="Light Bulb"
+      id="Image"
+      onclick="ToggleImage()"
+    />
+
+    <!-- Modal -->
+    <div
+      id="modal"
+      style="
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
+      "
+    >
+      <p>Do you want to turn the light on or off?</p>
+      <button onclick="TurnOn()">Turn On</button>
+      <button onclick="TurnOff()">Turn Off</button>
+      <button onclick="CloseModal()">Cancel</button>
+    </div>
+
+    <script>
+      const ImageBulb = document.getElementById("Image");
+      const Modal = document.getElementById("modal");
+
+      // Turns on the light
+      function TurnOn() {
+        ImageBulb.src = "../Images_T2B/encendida.gif";
+        CloseModal();
+      }
+
+      // Turns off the light
+      function TurnOff() {
+        ImageBulb.src = "../Images_T2B/apagada.gif";
+        CloseModal();
+      }
+
+      // Toggles the image when clicked
+      function ToggleImage() {
+        if (ImageBulb.src.includes("apagada.gif")) {
+          ImageBulb.src = "../Images_T2B/encendida.gif";
+        } else {
+          ImageBulb.src = "../Images_T2B/apagada.gif";
+        }
+      }
+
+      // Shows the modal
+      function ShowModal() {
+        Modal.style.display = "block";
+      }
+
+      // Closes the modal
+      function CloseModal() {
+        Modal.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

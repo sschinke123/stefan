@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // do - while
+      // do - while
+      // do - while
+
+      let num = Number(prompt("a Numer please"));
+      let factorialDoWhile = 1;
+      let i = num;
+
+      do {
+        factorialDoWhile = factorialDoWhile * i;
+        i--;
+      } while (i > 0);
+
+      console.log(`Fakultät mit do-while: ${factorialDoWhile}`);
+
+      // while
+      // while
+      // while
+
+      let num2 = Number(prompt("a 2. Number please"));
+      let factorialDoWhile2 = 1;
+      let i2 = num2;
+
+      while (i2 > 0) {
+        factorialDoWhile2 = factorialDoWhile2 * i2;
+        i2--;
+      }
+
+      console.log(`2. Fakultät mit while: ${factorialDoWhile2}`);
+
+      // for
+      // for
+      // for
+
+      let cont = 1;
+
+      for (i3 = Number(prompt("3.Number")); i3 > 0; i3--) {
+        cont = cont * i3;
+      }
+
+      console.log(cont);
+    </script>
+  </body>
+</html>

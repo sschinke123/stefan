@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="table-container"></div>
+
+    <script>
+      function createTable() {
+        const table = document.createElement("table");
+
+        table.style.borderCollapse = "collapse";
+
+        const row1 = document.createElement("tr");
+
+        const cell1 = document.createElement("td");
+        cell1.textContent = "td1";
+        cell1.style.border = "1px solid black";
+        cell1.style.padding = "20px";
+        const cell2 = document.createElement("td");
+        cell2.textContent = "Text in Zelle 2";
+        cell2.style.border = "1px solid black";
+        cell2.style.padding = "20px";
+
+        row1.appendChild(cell1);
+        row1.appendChild(cell2);
+
+        const row2 = document.createElement("tr");
+
+        const cell3 = document.createElement("td");
+        cell3.textContent = "Text in Zelle 3";
+        cell3.style.border = "1px solid black";
+        cell3.style.padding = "20px";
+        const cell4 = document.createElement("td");
+        cell4.textContent = "Text in Zelle 4";
+        cell4.style.border = "1px solid black";
+        cell4.style.padding = "20px";
+
+        row2.appendChild(cell3);
+        row2.appendChild(cell4);
+
+        table.appendChild(row1);
+        table.appendChild(row2);
+
+        document.getElementById("table-container").appendChild(table);
+      }
+
+      window.onload = createTable;
+
+      //  // Funktion zum Erstellen der Tabelle mit innerHTML
+      //     function createTable() {
+      //         const tableHTML = `
+      //             <table style="border-collapse: collapse; width: 50%; margin: 20px auto;">
+      //                 <tr>
+      //                     <td style="border: 1px solid black; padding: 20px; text-align: center;">Text in Zelle 1</td>
+      //                     <td style="border: 1px solid black; padding: 20px; text-align: center;">Text in Zelle 2</td>
+      //                 </tr>
+      //                 <tr>
+      //                     <td style="border: 1px solid black; padding: 20px; text-align: center;">Text in Zelle 3</td>
+      //                     <td style="border: 1px solid black; padding: 20px; text-align: center;">Text in Zelle 4</td>
+      //                 </tr>
+      //             </table>
+      //         `;
+
+      //         // Setze den HTML-Inhalt des Containers auf die Tabelle
+      //         document.getElementById("table-container").innerHTML = tableHTML;
+      //     }
+
+      //     // Funktion aufrufen, um die Tabelle zu erstellen
+      //     createTable();
+    </script>
+  </body>
+</html>

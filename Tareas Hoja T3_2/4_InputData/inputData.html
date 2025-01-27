@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Person Information</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      input,
+      button {
+        padding: 10px;
+        margin: 10px;
+        font-size: 14px;
+      }
+      div {
+        margin-top: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Person Information Form</h1>
+
+    <!-- Form for entering person details -->
+    <form id="personForm">
+      <input type="text" id="name" placeholder="Name" required /><br />
+      <input type="text" id="surname" placeholder="Surname" required /><br />
+      <input type="number" id="age" placeholder="Age" required /><br />
+      <input type="text" id="idNumber" placeholder="ID Number" required /><br />
+      <button type="button" onclick="addPerson()">Add Person</button>
+    </form>
+
+    <div id="peopleContainer"></div>
+
+    <button onclick="removeLastPerson()">Remove Last Person</button>
+    <button onclick="clearAllEntries()">Clear All Entries</button>
+
+    <script>
+      // Array to store people data
+      const people = [];
+
+      // Function to validate inputs
+      function validateInputs(name, surname, age, idNumber) {
+        // Name and surname should not be empty
+        if (!name || !surname) {
+          alert("Name and Surname are required.");
+          return false;
+        }
+
+        // Age should be a number and greater than or equal to 18
+        if (isNaN(age) || age < 18) {
+          alert("Age should be a number and at least 18.");
+          return false;
+        }
+
+        // ID Number must follow a basic validation (you can modify the regex as needed)
+        const idPattern = /^[A-Za-z0-9]+$/;
+        if (!idNumber.match(idPattern)) {
+          alert("ID Number should contain only letters and numbers.");
+          return false;
+        }
+
+        return true;
+      }
+
+      // Function to add a person to the array
+      function addPerson() {
+        const name = document.getElementById("name").value;
+        const surname = document.getElementById("surname").value;
+        const age = document.getElementById("age").value;
+        const idNumber = document.getElementById("idNumber").value;
+
+        // Validate inputs
+        if (!validateInputs(name, surname, age, idNumber)) {
+          return;
+        }
+
+        // Add the person to the people array
+        people.push({ name, surname, age, idNumber });
+
+        // Update the display
+        displayPeople();
+
+        // Clear the form fields
+        document.getElementById("personForm").reset();
+      }
+
+      // Function to display the people list
+      function displayPeople() {
+        const container = document.getElementById("peopleContainer");
+        container.innerHTML = ""; // Clear existing content
+
+        if (people.length === 0) {
+          container.innerHTML = "<p>No entries yet.</p>";
+          return;
+        }
+
+        const table = document.createElement("table");
+        const headerRow = document.createElement("tr");
+        headerRow.innerHTML = `
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Age</th>
+                <th>ID Number</th>
+            `;
+        table.appendChild(headerRow);
+
+        // Create a row for each person in the array
+        people.forEach((person) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+                    <td>${person.name}</td>
+                    <td>${person.surname}</td>
+                    <td>${person.age}</td>
+                    <td>${person.idNumber}</td>
+                `;
+          table.appendChild(row);
+        });
+
+        container.appendChild(table);
+      }
+
+      // Function to remove the last person from the array
+      function removeLastPerson() {
+        if (people.length > 0) {
+          people.pop();
+          displayPeople();
+        } else {
+          alert("No entries to remove.");
+        }
+      }
+
+      // Function to clear all entries
+      function clearAllEntries() {
+        people.length = 0; // Clear the array
+        displayPeople();
+      }
+    </script>
+  </body>
+</html>

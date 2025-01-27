@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weekly Menu Input</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      label {
+        font-weight: bold;
+      }
+      input,
+      button {
+        padding: 8px;
+        margin: 5px;
+        font-size: 14px;
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+      .menu-container {
+        margin-top: 30px;
+      }
+      .dish-list {
+        list-style-type: none;
+        padding-left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Enter Weekly Menu</h1>
+
+    <form id="menuForm">
+      <!-- Starters Section -->
+      <div class="section">
+        <h2>Starters (Separate with commas)</h2>
+        <label for="starters">Enter 5 Starters:</label>
+        <input
+          type="text"
+          id="starters"
+          name="starters"
+          placeholder="e.g., Caesar Salad, Bruschetta, Soup..."
+        /><br />
+      </div>
+
+      <!-- Main Courses Section -->
+      <div class="section">
+        <h2>Main Courses (Separate with commas)</h2>
+        <label for="mainCourses">Enter 5 Main Courses:</label>
+        <input
+          type="text"
+          id="mainCourses"
+          name="mainCourses"
+          placeholder="e.g., Grilled Chicken, Beef Steak, Lasagna..."
+        /><br />
+      </div>
+
+      <!-- Desserts Section -->
+      <div class="section">
+        <h2>Desserts (Separate with commas)</h2>
+        <label for="desserts">Enter 5 Desserts:</label>
+        <input
+          type="text"
+          id="desserts"
+          name="desserts"
+          placeholder="e.g., Chocolate Cake, Ice Cream, Tiramisu..."
+        /><br />
+      </div>
+
+      <!-- Submit Button -->
+      <button type="button" onclick="submitMenu()">Submit Menu</button>
+    </form>
+
+    <!-- Menu Display Section -->
+    <div id="menuContainer" class="menu-container" style="display: none">
+      <h2>Weekly Menu</h2>
+      <div>
+        <h3>Starters:</h3>
+        <ul id="startersList" class="dish-list"></ul>
+      </div>
+      <div>
+        <h3>Main Courses:</h3>
+        <ul id="mainCoursesList" class="dish-list"></ul>
+      </div>
+      <div>
+        <h3>Desserts:</h3>
+        <ul id="dessertsList" class="dish-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      // Function to handle menu submission
+      function submitMenu() {
+        // Get the values from the form fields
+        const startersInput = document.getElementById("starters").value;
+        const mainCoursesInput = document.getElementById("mainCourses").value;
+        const dessertsInput = document.getElementById("desserts").value;
+
+        // Validate inputs - Ensure each input has at least 5 items
+        if (!startersInput || !mainCoursesInput || !dessertsInput) {
+          alert("Please fill in all fields.");
+          return;
+        }
+
+        // Convert input strings into arrays (by splitting the values based on commas)
+        const starters = startersInput.split(",").map((item) => item.trim());
+        const mainCourses = mainCoursesInput
+          .split(",")
+          .map((item) => item.trim());
+        const desserts = dessertsInput.split(",").map((item) => item.trim());
+
+        // Check if the arrays contain exactly 5 items each
+        if (
+          starters.length !== 5 ||
+          mainCourses.length !== 5 ||
+          desserts.length !== 5
+        ) {
+          alert("Please enter exactly 5 dishes for each category.");
+          return;
+        }
+
+        // Show the menu container
+        document.getElementById("menuContainer").style.display = "block";
+
+        // Display the menu items
+        displayMenu("startersList", starters);
+        displayMenu("mainCoursesList", mainCourses);
+        displayMenu("dessertsList", desserts);
+      }
+
+      // Function to display menu items in the corresponding lists
+      function displayMenu(listId, dishes) {
+        const list = document.getElementById(listId);
+        list.innerHTML = ""; // Clear existing items
+
+        // Loop through the dishes and add them to the list
+        dishes.forEach((dish) => {
+          const li = document.createElement("li");
+          li.textContent = dish;
+          list.appendChild(li);
+        });
+      }
+    </script>
+  </body>
+</html>

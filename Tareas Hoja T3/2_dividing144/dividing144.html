@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>What is the result of 144 divided by 12?</h1>
+
+    <input
+      type="text"
+      id="InputNumber"
+      placeholder="Enter your answer here"
+      style="width: 300px"
+    />
+
+    <button onclick="CheckTheResult()" id="checkButton">
+      Check the result
+    </button>
+    <button onclick="ClearData()" id="clearButton">Clear Data</button>
+
+    <script>
+      function CheckTheResult() {
+        const number = document.getElementById("InputNumber").value;
+
+        if (isNaN(number) || number === "") {
+          alert("Please enter a valid number.");
+        } else {
+          if (ValidateAnswer(number)) {
+            alert("Correct! You can proceed to the next task.");
+          } else {
+            alert("Incorrect. Please try again.");
+          }
+        }
+      }
+
+      function ValidateAnswer(input) {
+        const correctAnswer = 144 / 12;
+        return parseInt(input) === correctAnswer;
+      }
+
+      // Function to clear the data
+      function ClearData() {
+        document.getElementById("InputNumber").value = "";
+        alert("Data cleared. Please enter a new answer.");
+      }
+
+      // Der Code funktioniert, weil die Übergabe des Wertes von number an ValidateAnswer korrekt ist. Der Name des Parameters (input) ist dabei nebensächlich und kann beliebig gewählt werden, solange er im Funktionskörper korrekt verwendet wird. Die Funktionsweise des Programms bleibt also auch mit unterschiedlichen Parameternamen unverändert.
+    </script>
+  </body>
+</html>

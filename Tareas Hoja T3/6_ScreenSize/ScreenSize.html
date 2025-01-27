@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #screenInfo {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 10px;
+        display: none; /* Initially hidden */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Screen Information</h1>
+    <a href="javascript:void(0);" onclick="showScreenInfo()"
+      >Click to View Screen Info</a
+    >
+
+    <div id="screenInfo"></div>
+
+    <script>
+      function showScreenInfo() {
+        // Get screen information
+        const screenWidth = window.screen.width;
+        const screenHeight = window.screen.height;
+        const usableWidth = window.innerWidth;
+        const usableHeight = window.innerHeight;
+        const colorDepth = window.screen.colorDepth;
+
+        // Calculate diagonal in pixels using the Pythagorean theorem
+        const diagonal = Math.sqrt(
+          Math.pow(screenWidth, 2) + Math.pow(screenHeight, 2)
+        ).toFixed(2);
+
+        // Display the information in the div
+        const infoDiv = document.getElementById("screenInfo");
+        infoDiv.innerHTML = `
+        <p><strong>Screen Width:</strong> ${screenWidth} px</p>
+        <p><strong>Screen Height:</strong> ${screenHeight} px</p>
+        <p><strong>Usable Width:</strong> ${usableWidth} px</p>
+        <p><strong>Usable Height:</strong> ${usableHeight} px</p>
+        <p><strong>Color Depth:</strong> ${colorDepth} bits</p>
+        <p><strong>Screen Diagonal:</strong> ${diagonal} px</p>
+      `;
+
+        // Show the information div
+        infoDiv.style.display = "block";
+      }
+    </script>
+  </body>
+</html>

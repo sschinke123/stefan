@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Select Background Color</h1>
+
+    <!-- Dropdown menu with four color options -->
+    <label for="colorSelector">Choose a color:</label>
+    <select id="colorSelector">
+      <option value="white">White</option>
+      <option value="lightblue">Light Blue</option>
+      <option value="lightgreen">Light Green</option>
+      <option value="lightcoral">Light Coral</option>
+    </select>
+
+    <!-- Button to apply selected color -->
+    <button onclick="changeBackgroundColor()">Apply Color</button>
+
+    <script>
+      // Function to change the background color of the page
+      function changeBackgroundColor() {
+        // Get the selected color from the dropdown
+        const selectedColor = document.getElementById("colorSelector").value;
+
+        // Use the bgColor method to change the background color of the page
+        document.bgColor = selectedColor;
+      }
+    </script>
+  </body>
+</html>

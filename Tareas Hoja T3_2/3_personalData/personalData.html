@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Person Details</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      table {
+        width: 50%;
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Person Details</h1>
+
+    <button onclick="displayPersonDetails()">Display Person Details</button>
+
+    <table id="personTable" style="display: none">
+      <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Age</th>
+        <th>ID Number</th>
+      </tr>
+      <tr id="personRow">
+        <!-- Data will be inserted here -->
+      </tr>
+    </table>
+
+    <script>
+      // Creating an associative array (object) to store the person's details
+      const person = {
+        name: "John",
+        surname: "Doe",
+        age: 30,
+        idNumber: "A12345678",
+      };
+
+      // Function to display the person's details
+      function displayPersonDetails() {
+        // Accessing the table and the row to insert the data
+        const table = document.getElementById("personTable");
+        const row = document.getElementById("personRow");
+
+        // Populating the row with the person's data
+        row.innerHTML = `
+                <td>${person.name}</td>
+                <td>${person.surname}</td>
+                <td>${person.age}</td>
+                <td>${person.idNumber}</td>
+            `;
+
+        // Displaying the table
+        table.style.display = "table";
+      }
+    </script>
+  </body>
+</html>

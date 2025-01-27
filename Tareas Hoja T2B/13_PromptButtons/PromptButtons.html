@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+      button {
+        width: 300px;
+        height: 50px;
+        margin: 20px;
+      }
+      p {
+        display: ;
+        border: 1px solid black;
+        height: 50px;
+        width: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button onclick="numberF()" id="number">Anzahl der Zeichen</button>
+      <p id="numberBox"></p>
+
+      <button onclick="italicF()" id="italic">Kursiv</button>
+      <p id="italicBox"></p>
+
+      <button onclick="boldF()" id="bold">Fett</button>
+      <p id="boldBox"></p>
+
+      <button onclick="redF()" id="red">Rot</button>
+      <p id="redBox"></p>
+
+      <button onclick="largeF()" id="large">Große Schriftgröße</button>
+      <p id="largeBox"></p>
+
+      <button onclick="strikethroughF()" id="strikethrough">
+        Durchgestrichen
+      </button>
+      <p id="strikeBox"></p>
+    </div>
+
+    <script>
+      let Input = prompt("Please enter a Word");
+
+      function numberF() {
+        let charCount = Input.length;
+        document.getElementById("numberBox").textContent = charCount;
+      }
+
+      function italicF() {
+        document.getElementById("italicBox").innerHTML = "<i>" + Input + "</i>";
+      }
+
+      function boldF() {
+        document.getElementById("boldBox").innerHTML = "<b>" + Input + "</b>";
+      }
+
+      function redF() {
+        document.getElementById("redBox").innerHTML =
+          "<span style='color: red;'>" + Input + "</span>";
+      }
+
+      function largeF() {
+        document.getElementById("largeBox").innerHTML =
+          "<span style='font-size: 50px;'>" + Input + "</span>";
+      }
+
+      function strikethroughF() {
+        document.getElementById("strikeBox").innerHTML =
+          "<span style='text-decoration: line-through;'>" + Input + "</span>";
+      }
+    </script>
+  </body>
+</html>

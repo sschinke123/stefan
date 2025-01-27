@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estructura I ... else if ...else</title>
+  </head>
+  <body>
+    <script>
+      function salir() {
+        location.replace("https://www.w3schools.com");
+      }
+
+      let num1 = 10;
+      let num2 = prompt("introduce un numero");
+      console.log(typeof num2);
+      num2 = Number(num2);
+      let result = num1 + num2;
+
+      if (result > 20) {
+        alert(result + " Es el resultado se sumar " + num1 + " y " + num2);
+        alert(
+          `${result} es el resulado de sumar ${num1} y ${num2} y es mayor que 20`
+        );
+      } else if (result == 20) {
+        alert(
+          `${result} es el resulado de sumar ${num1} y ${num2} y es provamente igual que 20`
+        );
+      } else if (result < 20) {
+        alert(
+          `${result} es el resulado de sumar ${num1} y ${num2} y es menor que 20`
+        );
+      } else {
+        alert("Se Sienteeee. No puedo operar");
+      }
+
+      let salirono = confirm("Volver a cargar el juego?");
+      if (salirono) {
+        location.reload();
+      } else {
+        salir();
+      }
+    </script>
+  </body>
+</html>

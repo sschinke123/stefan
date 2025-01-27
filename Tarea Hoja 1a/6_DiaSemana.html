@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let dia = prompt("dia de la semana");
+      dia = dia.toUpperCase();
+      console.log(dia);
+      let result;
+      let ndia = 0;
+
+      switch (dia) {
+        case "LUNES":
+          result = `Has introducido ${dia} y es el dia numero ${ndia + 1}`;
+          break;
+        case "MARTES":
+          result = `Has introducido ${dia} y es el dia numero ${ndia + 2}`;
+          break;
+        case "MIERCOLES":
+          result = `Has introducido ${dia} y es el dia numero ${ndia + 3}`;
+          break;
+        case "JUEVES":
+          result = `Has introducido ${dia} y es el dia numero ${ndia + 4}`;
+          break;
+        case "VIERNES":
+          result = `Has introducido ${dia} y es el dia numero ${ndia + 5}`;
+          break;
+        case "SABADO":
+          result = `Has introducido ${dia} y es el dia numero ${ndia + 6}`;
+          break;
+        case "DOMINGO":
+          result = `Has introducido ${dia} y es el dia numero ${ndia + 7}`;
+      }
+
+      alert(result);
+
+      let salirono = confirm("Volver a cargar la app?");
+
+      if (salirono) {
+        location.reload();
+      } else {
+        salir();
+      }
+    </script>
+  </body>
+</html>

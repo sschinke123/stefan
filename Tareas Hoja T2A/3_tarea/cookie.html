@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookies</title>
+  </head>
+  <body>
+    <h2>Cookies</h2>
+
+    <script>
+      let cookies = navigator.cookieEnabled;
+
+      const salir = function salir() {
+        window.location.href = "https://www.w3schools.com";
+      };
+
+      if (cookies) {
+        const confirm = window.confirm(
+          "Cookies are enabled. Do you accept the use of cookies on this site?"
+        );
+
+        if (!confirm) {
+          salir();
+        } else {
+          console.log("User accepts cookies.");
+        }
+      } else {
+        salir();
+      }
+    </script>
+  </body>
+</html>

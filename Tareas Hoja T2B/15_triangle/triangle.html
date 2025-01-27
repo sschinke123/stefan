@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let base, height;
+
+      do {
+        base = prompt("Enter the base of the triangle:");
+
+        base = parseFloat(base);
+
+        if (isNaN(base) || base <= 0) {
+          alert("Please enter a valid positive number for the base.");
+        }
+      } while (isNaN(base) || base <= 0);
+
+      do {
+        height = prompt("Enter the height of the triangle:");
+
+        height = parseFloat(height);
+
+        if (isNaN(height) || height <= 0) {
+          alert("Please enter a valid positive number for the height.");
+        }
+      } while (isNaN(height) || height <= 0);
+
+      let area = 0.5 * base * height;
+
+      document.write("The area of the triangle is: " + area);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Calculate Price with VAT</h1>
+
+    <label for="priceWithoutVAT">Price without VAT (€):</label>
+    <input
+      type="text"
+      id="priceWithoutVAT"
+      placeholder="Enter the price without VAT"
+      style="width: 300px"
+    />
+    <br /><br />
+
+    <label for="vatRate">VAT Rate (%):</label>
+    <input
+      type="text"
+      id="vatRate"
+      placeholder="Enter the VAT rate"
+      style="width: 300px"
+    />
+    <br /><br />
+
+    <button onclick="calculatePriceWithVAT()" id="calculateButton">
+      Calculate Price with VAT
+    </button>
+    <br /><br />
+
+    <h3 id="result"></h3>
+
+    <button onclick="clearData()" id="clearButton">Clear Data</button>
+
+    <script>
+      function calculatePriceWithVAT() {
+        const priceWithoutVAT = parseFloat(
+          document.getElementById("priceWithoutVAT").value
+        );
+        const vatRate = parseFloat(document.getElementById("vatRate").value);
+
+        if (isNaN(priceWithoutVAT) || priceWithoutVAT <= 0) {
+          alert("Please enter a valid price without VAT.");
+          return;
+        }
+
+        if (isNaN(vatRate) || vatRate <= 0) {
+          alert("Please enter a valid VAT rate.");
+          return; // die function wird beendet nach return, code danach wird nicht mehr ausgefuehrt.
+        }
+
+        const priceWithVAT =
+          priceWithoutVAT + priceWithoutVAT * (vatRate / 100);
+
+        document.getElementById(
+          "result"
+        ).innerText = `Price with VAT: €${priceWithVAT.toFixed(2)}`;
+      }
+
+      function clearData() {
+        document.getElementById("priceWithoutVAT").value = "";
+        document.getElementById("vatRate").value = "";
+        document.getElementById("result").innerText = "";
+      }
+    </script>
+  </body>
+</html>

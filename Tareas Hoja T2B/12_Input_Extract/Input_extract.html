@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="input-field" />
+    <button onclick="InputExtract()">Submit</button>
+    <div id="Output"></div>
+    <script>
+      function InputExtract() {
+        let InputText = document.querySelector("#input-field").value;
+        const TextLong = InputText.length;
+
+        let FinalString;
+
+        if (TextLong > 10) {
+          FinalString = InputText.slice(-5);
+        } else {
+          FinalString = InputText;
+        }
+
+        let FinalOutput = document.getElementById("Output");
+        FinalOutput.innerHTML = FinalString;
+      }
+    </script>
+  </body>
+</html>

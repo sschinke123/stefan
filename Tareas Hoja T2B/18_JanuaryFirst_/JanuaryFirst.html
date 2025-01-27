@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Milliseconds since January 1, 1970:</h1>
+    <p id="milliseconds"></p>
+
+    <script>
+      // Get the current time in milliseconds since January 1, 1970
+      // Date.now() is used to get the number of milliseconds since January 1, 1970.
+      var milliseconds = Date.now();
+
+      // Display the result in the paragraph element
+      document.getElementById("milliseconds").innerText = milliseconds;
+    </script>
+  </body>
+</html>

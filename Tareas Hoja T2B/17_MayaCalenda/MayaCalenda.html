@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Mayan Calendar End Date and Time Difference</h2>
+
+    <p>
+      <strong>Current Date and Time:</strong> <span id="currentDate"></span>
+    </p>
+    <p>
+      <strong>Milliseconds since the Mayan Calendar End:</strong>
+      <span id="milliseconds"></span>
+    </p>
+
+    <script>
+      // Mayan Calendar end date (December 21, 2012)
+      const mayanEndDate = new Date("2012-12-21T00:00:00Z");
+
+      // Get current date and time
+      const currentDate = new Date();
+
+      // Calculate the difference in milliseconds
+      const timeDifference = currentDate - mayanEndDate;
+
+      // Format current date and time details
+      const currentDay = currentDate.getDate();
+      const currentMonth = currentDate.getMonth() + 1; // Months are 0-based
+      const currentYear = currentDate.getFullYear();
+      const currentHour = currentDate.getHours();
+      const currentMinutes = currentDate.getMinutes();
+      const currentSeconds = currentDate.getSeconds();
+
+      // Day of the week (0 = Sunday, 1 = Monday, etc.)
+      const dayOfWeek = currentDate.getDay();
+      const daysOfWeek = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      const currentDayOfWeek = daysOfWeek[dayOfWeek];
+
+      // Display the current date and time
+      document.getElementById(
+        "currentDate"
+      ).innerHTML = `${currentDayOfWeek}, ${currentMonth}/${currentDay}/${currentYear} ${currentHour}:${currentMinutes}:${currentSeconds}`;
+
+      // Display the milliseconds since the Mayan calendar end
+      document.getElementById("milliseconds").innerHTML =
+        timeDifference + " milliseconds";
+    </script>
+  </body>
+</html>
