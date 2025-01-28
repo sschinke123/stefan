@@ -39,7 +39,6 @@
     <div id="result"></div>
 
     <script>
-      // Array of months in their real order
       const months = [
         "January",
         "February",
@@ -55,33 +54,28 @@
         "December",
       ];
 
-      // Function to display months in real order
       function displayRealOrder() {
         document.getElementById("result").innerHTML =
           "Real Order: " + months.join(", ");
       }
 
-      // Function to display months in alphabetical order
       function displayAlphabeticalOrder() {
-        let sortedMonths = [...months].sort();
+        let sortedMonths = [...months].sort(); // [...months] = copy
         document.getElementById("result").innerHTML =
           "Alphabetical Order: " + sortedMonths.join(", ");
       }
 
-      // Function to display months separated by hyphens
       function displayWithHyphens() {
         document.getElementById("result").innerHTML =
           "Separated by Hyphens: " + months.join(" - ");
       }
 
-      // Function to display months in reverse order
       function displayReverseOrder() {
         let reversedMonths = [...months].reverse();
         document.getElementById("result").innerHTML =
           "Reverse Order: " + reversedMonths.join(", ");
       }
 
-      // Function to display months separated by a custom separator
       function displayWithCustomSeparator() {
         const separator = prompt(
           "Enter a separator character (e.g., ' / ' or ' | '):"

@@ -24,11 +24,10 @@
   <body>
     <h1>Enter a Sentence</h1>
 
-    <!-- Text area for user input -->
     <textarea
       id="userSentence"
       rows="4"
-      cols="50"
+      cols="60"
       placeholder="Enter your sentence here..."
     ></textarea>
     <br />
@@ -36,7 +35,6 @@
 
     <script>
       function analyzeSentence() {
-        // Get the user's sentence
         const sentence = document.getElementById("userSentence").value;
 
         // Check if the input is empty
@@ -48,14 +46,11 @@
         // Split the sentence into words
         const words = sentence.split(/\s+/);
 
-        // Get the first and last words
         const firstWord = words[0];
         const lastWord = words[words.length - 1];
 
-        // Get the total number of words
         const totalWords = words.length;
 
-        // Sort the words alphabetically and join with hyphens
         const sortedWords = words.slice().sort();
         const sortedWordsWithHyphens = sortedWords.join(" - ");
 
