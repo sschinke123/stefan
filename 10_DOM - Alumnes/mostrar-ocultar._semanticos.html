@@ -1,53 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Añadir elementos con DOM</title>
-    <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="../02_uso_frameworks/w3/source/css/w3.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
-</head>
-
-
-
-
-</head>
-
-<body>
+  <body>
     <a id="enlace_1" href="#"> Ocultar contenidos</a>
     <br />
-    <p id="contenidos_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed
-        mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo
-        nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus
-        at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede.
-        Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper
-        quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper,
-        odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet,
-        consectetuer adipiscing elit. Duis scelerisque.</p>
+    <p id="contenidos_1">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim
+      vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue,
+      commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere
+      vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id,
+      aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum
+      elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut,
+      rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio
+      urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit
+      amet, consectetuer adipiscing elit. Duis scelerisque.
+    </p>
 
-    <a id="enlace_2" href="#">Ocultar
-        contenidos</a><br />
-    <p id="contenidos_2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed
-        mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo
-        nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus
-        at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede.
-        Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper
-        quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper,
-        odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet,
-        consectetuer adipiscing elit. Duis scelerisque.</p>
-    <a id="enlace_3" href="#">Ocultar
-        contenidos</a>
+    <a id="enlace_2" href="#">Ocultar contenidos</a><br />
+    <p id="contenidos_2">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim
+      vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue,
+      commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere
+      vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id,
+      aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum
+      elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut,
+      rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio
+      urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit
+      amet, consectetuer adipiscing elit. Duis scelerisque.
+    </p>
+    <a id="enlace_3" href="#">Ocultar contenidos</a>
     <br />
-    <p id="contenidos_3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed
-        mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo
-        nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus
-        at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede.
-        Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper
-        quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper,
-        odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet,
-        consectetuer adipiscing elit. Duis scelerisque.</p>
-   
-</body>
+    <p id="contenidos_3">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim
+      vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue,
+      commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere
+      vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id,
+      aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum
+      elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut,
+      rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio
+      urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit
+      amet, consectetuer adipiscing elit. Duis scelerisque.
+    </p>
 
+    <script>
+      let id, enlace, param;
+      const muestraOculta = (param) => {
+        id = document.querySelector("#contenidos_" + param);
+        enlace = document.querySelectorAll("a");
+        if (id.style.display == "" || id.style.display == "block") {
+          id.style.display = "none";
+          vinculo.innerHTML = "Mostrar Contenidos";
+        } else {
+          id.style.display = "block";
+          vinculo.innerHTML = "Ocultar Contenidos";
+        }
+      };
+
+      window.addEventListener("load", () => {
+        enlace = document.querySelectorAll("a");
+        id = document.querySelector("#contenidos_" + param);
+
+        for (let i = 0; i < enlace.length; i++) {
+          enlace[i].onclick = function () {
+            param = enlace[i].id;
+            if (this.id == param) {
+              param = param.substring(7, 8);
+              muestraOculta(param);
+            }
+          };
+        }
+      });
+    </script>
+  </body>
 </html>
