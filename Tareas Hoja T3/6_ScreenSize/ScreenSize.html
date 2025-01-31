@@ -9,7 +9,7 @@
         border: 1px solid #ccc;
         padding: 10px;
         margin-top: 10px;
-        display: none; /* Initially hidden */
+        display: none;
       }
     </style>
   </head>
@@ -23,19 +23,17 @@
 
     <script>
       function showScreenInfo() {
-        // Get screen information
         const screenWidth = window.screen.width;
         const screenHeight = window.screen.height;
         const usableWidth = window.innerWidth;
         const usableHeight = window.innerHeight;
         const colorDepth = window.screen.colorDepth;
 
-        // Calculate diagonal in pixels using the Pythagorean theorem
+        // Pythagorean theorem
         const diagonal = Math.sqrt(
           Math.pow(screenWidth, 2) + Math.pow(screenHeight, 2)
         ).toFixed(2);
 
-        // Display the information in the div
         const infoDiv = document.getElementById("screenInfo");
         infoDiv.innerHTML = `
         <p><strong>Screen Width:</strong> ${screenWidth} px</p>
@@ -46,7 +44,6 @@
         <p><strong>Screen Diagonal:</strong> ${diagonal} px</p>
       `;
 
-        // Show the information div
         infoDiv.style.display = "block";
       }
     </script>

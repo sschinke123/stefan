@@ -7,17 +7,3 @@ do {
 } while (number1 < 50);
 
 alert("Final value: " + counter);
-
-// isNaN(num2) || num2 == "")?contador = contador: contador++;
-
-// same like:
-
-// if (isNaN(num2) || num2 == "") {
-//   contador = contador;
-// } else {
-//   contador++;
-// }
-
-// same like
-
-// if (isNaN(num2) || num2 == "") contador = contador; contador++;

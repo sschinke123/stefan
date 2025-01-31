@@ -6,5 +6,10 @@ th {
 }
 
 th:nth-child(2) {
-  background-color: lightblue; /* Farbe für die zweite Headerzelle */
+  background-color: lightblue; /* color for 2. header cell*/
 }
+
+/* :nth-child(2): Selects the second child element within a parent container.
+:nth-child(odd): Selects all odd positioned elements (1st, 3rd, 5th, ...).
+:nth-child(even): Selects all even positioned elements (2nd, 4th, 6th, ...).
+:nth-child(3n): Selects every third element (3rd, 6th, 9th, ...). */

@@ -9,16 +9,8 @@
     <script>
       let title = "";
 
-      // Solange der Benutzer keinen gültigen Titel eingibt, wird erneut gefragt
       while (!title) {
-        title = prompt("Bitte geben Sie einen Titel für die Webseite ein:");
-
-        // // Falls der Benutzer nichts eingibt oder auf 'Abbrechen' klickt, wird erneut gefragt
-        // if (!title) {
-        //   alert(
-        //     "Der Titel darf nicht leer sein! Bitte geben Sie einen Titel ein."
-        //   );
-        // }
+        title = prompt("Please name a titel:");
       }
 
       title = title.toUpperCase();

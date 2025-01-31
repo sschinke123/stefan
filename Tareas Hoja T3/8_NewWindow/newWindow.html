@@ -8,26 +8,22 @@
   <body>
     <h1>Open and Close Controlled Window</h1>
 
-    <!-- Button to open the new window -->
     <button onclick="openWindow()">Open Controlled Window</button>
 
     <script>
-      let newWindow; // To store the reference to the new window
+      let newWindow;
 
-      // Function to open a new window
       function openWindow() {
         // Check if the window is already open and not closed
         if (newWindow && !newWindow.closed) {
           alert("The window is already open!");
         } else {
-          // Open a new window with specific properties
           newWindow = window.open(
             "",
-            "newWindow",
+            "newWindoww",
             "width=400,height=300,resizable,scrollbars"
           );
 
-          // Add content to the new window after it opens
           newWindow.document.write(`
           <html>
             <head>
@@ -38,8 +34,7 @@
               <p>The window has been opened with specific properties.</p>
               <button onclick="window.close()">Close Window</button>
             </body>
-          </html>
-        `);
+          </html>`);
 
           // Ensure the new window is fully loaded
           newWindow.document.close();
