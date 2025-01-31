@@ -19,8 +19,9 @@
         Math.pow(screenWidth, 2) + Math.pow(screenHeight, 2)
       ).toFixed(2);
 
-      // let diagonal = Math.sqrt(Math.pow(ancho, 2) + Math.pow(alto, 2));
-      // diagonal = diagonal.toFixed(2);
+      // Math.sqrt - square root of a number
+      // toFixed - abrunden
+      // Math.pow(base, exponent)
 
       const screenInfo = `
       <p>Screen Width: ${screenWidth} px</p>
@@ -31,9 +32,6 @@
     `;
 
       document.getElementById("screenInfo").innerHTML = screenInfo;
-
-      // let mostra = document.getElementById("mostra");
-      // mostra.innerHTML = `${alto}  - ${ancho} - ${diagonal}`;
     </script>
   </body>
 </html>

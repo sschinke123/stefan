@@ -8,10 +8,11 @@
   <body>
     <button onclick="openWindow()">open a new Window</button>
     <script>
-      let newWindow;
-
       function openWindow() {
-        newWindow = window.open("", "NewWindow", "width=400,height=300");
+        let newWindow = window.open("", "NewWindow", "width=400,height=300");
+
+        // window.open(URL, name, specs);
+
         newWindow.document.write(
           "<h2>This is a window controlled from JavaScript.</h2>"
         );

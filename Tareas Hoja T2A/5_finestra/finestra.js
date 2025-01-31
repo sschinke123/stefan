@@ -58,5 +58,4 @@ window.onload = function () {
 
   // Wenn die URL gültig ist, die URL des Elternfensters ändern
   window.opener.location.href = newUrl;
-
-
+};
