@@ -14,28 +14,27 @@
   <body>
     <h1>Enter a Sentence</h1>
 
-    <!-- Input field for the sentence -->
-    <input type="text" id="sentenceInput" placeholder="Type a sentence here" />
+      <input type="text" id="sentenceInput" placeholder="Type a sentence here" />
 
-    <!-- Button to process the input -->
+    
     <button onclick="processSentence()">Submit Sentence</button>
 
-    <!-- Display the number of characters and formatted sentence -->
+    
     <p id="characterCount"></p>
     <div id="formattedSentence"></div>
 
     <script>
       function processSentence() {
-        // Get the value of the sentence typed by the user
+        
         const sentence = document.getElementById("sentenceInput").value;
 
-        // Display the number of characters typed
+        
         const charCount = sentence.length;
         document.getElementById(
           "characterCount"
         ).innerText = `Number of characters: ${charCount}`;
 
-        // Apply the required formatting and display the sentence
+        
         const formattedSentence = `<p style="font-size: 50px; color: red; font-weight: bold; font-style: italic; text-decoration: line-through;">
                                   ${sentence}</p>`;
         document.getElementById("formattedSentence").innerHTML =

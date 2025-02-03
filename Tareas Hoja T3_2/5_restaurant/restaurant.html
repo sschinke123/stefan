@@ -8,10 +8,10 @@
   <body>
     <h1>Restaurant Weekly Menu</h1>
 
-    <!-- Button to display the weekly menu -->
+    
     <button onclick="showMenu()">Show Weekly Menu</button>
 
-    <!-- Div to display the menu -->
+    
     <div id="menuContainer" style="display: none">
       <h2>Starters</h2>
       <ul id="startersList"></ul>
@@ -24,7 +24,7 @@
     </div>
 
     <script>
-      // Weekly menu items
+      
       const starters = [
         "Caesar Salad",
         "Bruschetta",
@@ -47,56 +47,56 @@
         "Ice Cream",
       ];
 
-      // Function to display the weekly menu
+      
       function showMenu() {
-        // Get the container to display the menu
+        
         const menuContainer = document.getElementById("menuContainer");
 
-        // Display the menu container
+        
         menuContainer.style.display = "block";
 
-        // Display starters
+        
         const startersList = document.getElementById("startersList");
-        startersList.innerHTML = ""; // Clear any existing items
+        startersList.innerHTML = ""; 
         starters.forEach((starter) => {
           const li = document.createElement("li");
           li.textContent = starter;
           startersList.appendChild(li);
         });
 
-        // Display main courses
+        
         const mainCoursesList = document.getElementById("mainCoursesList");
-        mainCoursesList.innerHTML = ""; // Clear any existing items
+        mainCoursesList.innerHTML = ""; 
         mainCourses.forEach((course) => {
           const li = document.createElement("li");
           li.textContent = course;
           mainCoursesList.appendChild(li);
         });
 
-        // Display desserts
+        
         const dessertsList = document.getElementById("dessertsList");
-        dessertsList.innerHTML = ""; // Clear any existing items
+        dessertsList.innerHTML = ""; 
         desserts.forEach((dessert) => {
           const li = document.createElement("li");
           li.textContent = dessert;
           dessertsList.appendChild(li);
         });
 
-        // Apply inline styles using JavaScript
+        
         menuContainer.style.padding = "20px";
         menuContainer.style.backgroundColor = "#f4f4f9";
         menuContainer.style.border = "1px solid #ddd";
         menuContainer.style.borderRadius = "8px";
         menuContainer.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
 
-        // Style the list items
+        
         const lists = [startersList, mainCoursesList, dessertsList];
         lists.forEach((list) => {
           list.style.listStyleType = "none";
           list.style.paddingLeft = "0";
         });
 
-        // Style the headings
+        
         const headings = document.querySelectorAll("h2");
         headings.forEach((heading) => {
           heading.style.fontSize = "20px";
@@ -105,7 +105,7 @@
           heading.style.marginBottom = "10px";
         });
 
-        // Style the button
+        
         const button = document.querySelector("button");
         button.style.padding = "10px 20px";
         button.style.backgroundColor = "#007bff";

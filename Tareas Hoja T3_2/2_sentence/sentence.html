@@ -37,14 +37,14 @@
       function analyzeSentence() {
         const sentence = document.getElementById("userSentence").value;
 
-        // Check if the input is empty
+        
         if (sentence.trim() === "") {
           alert("Please enter a sentence.");
           return;
         }
 
-        // Split the sentence into words
-        const words = sentence.split(/\s+/);
+        // Split sentence into array
+        const words = sentence.split(/\s+/); 
 
         const firstWord = words[0];
         const lastWord = words[words.length - 1];
@@ -54,7 +54,7 @@
         const sortedWords = words.slice().sort();
         const sortedWordsWithHyphens = sortedWords.join(" - ");
 
-        // Open a new window to display the results
+      
         const newWindow = window.open("", "_blank", "width=600,height=400");
         newWindow.document.write("<h1>Sentence Analysis</h1>");
         newWindow.document.write(

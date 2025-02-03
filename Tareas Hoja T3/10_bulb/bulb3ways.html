@@ -23,7 +23,6 @@
       onclick="ToggleImage()"
     />
 
-    <!-- Modal -->
     <div
       id="modal"
       style="
@@ -48,19 +47,19 @@
       const ImageBulb = document.getElementById("Image");
       const Modal = document.getElementById("modal");
 
-      // Turns on the light
+      
       function TurnOn() {
         ImageBulb.src = "../Images_T2B/encendida.gif";
         CloseModal();
       }
 
-      // Turns off the light
+      
       function TurnOff() {
         ImageBulb.src = "../Images_T2B/apagada.gif";
         CloseModal();
       }
 
-      // Toggles the image when clicked
+      
       function ToggleImage() {
         if (ImageBulb.src.includes("apagada.gif")) {
           ImageBulb.src = "../Images_T2B/encendida.gif";
@@ -69,12 +68,12 @@
         }
       }
 
-      // Shows the modal
+      
       function ShowModal() {
         Modal.style.display = "block";
       }
 
-      // Closes the modal
+      
       function CloseModal() {
         Modal.style.display = "none";
       }

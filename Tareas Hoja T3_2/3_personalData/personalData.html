@@ -38,26 +38,24 @@
         <th>ID Number</th>
       </tr>
       <tr id="personRow">
-        <!-- Data will be inserted here -->
-      </tr>
+            </tr>
     </table>
 
     <script>
-      // Creating an associative array (object) to store the person's details
-      const person = {
+            const person = {
         name: "John",
         surname: "Doe",
         age: 30,
         idNumber: "A12345678",
       };
 
-      // Function to display the person's details
+      
       function displayPersonDetails() {
-        // Accessing the table and the row to insert the data
+        
         const table = document.getElementById("personTable");
         const row = document.getElementById("personRow");
 
-        // Populating the row with the person's data
+        
         row.innerHTML = `
                 <td>${person.name}</td>
                 <td>${person.surname}</td>
@@ -65,7 +63,7 @@
                 <td>${person.idNumber}</td>
             `;
 
-        // Displaying the table
+        
         table.style.display = "table";
       }
     </script>

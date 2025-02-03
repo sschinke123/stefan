@@ -1,37 +1,17 @@
-body {
-  font-family: Arial, sans-serif;
+
+.form-container {
+  max-width: 600px;
+  margin: auto;
   padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
-form {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-div {
+.form-line {
   margin-bottom: 10px;
 }
 
-label {
-  margin-right: 10px;
-}
-
-input,
-textarea,
-button {
+textarea {
   width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-}
-
-button {
-  width: auto;
-  background-color: #4caf50;
-  color: white;
-  cursor: pointer;
-  margin-right: 5px;
-}
-
-button:hover {
-  background-color: #45a049;
+  margin-top: 10px;
 }

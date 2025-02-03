@@ -34,7 +34,7 @@
     <h1>Enter Weekly Menu</h1>
 
     <form id="menuForm">
-      <!-- Starters Section -->
+      
       <div class="section">
         <h2>Starters (Separate with commas)</h2>
         <label for="starters">Enter 5 Starters:</label>
@@ -46,7 +46,7 @@
         /><br />
       </div>
 
-      <!-- Main Courses Section -->
+      
       <div class="section">
         <h2>Main Courses (Separate with commas)</h2>
         <label for="mainCourses">Enter 5 Main Courses:</label>
@@ -58,7 +58,7 @@
         /><br />
       </div>
 
-      <!-- Desserts Section -->
+      
       <div class="section">
         <h2>Desserts (Separate with commas)</h2>
         <label for="desserts">Enter 5 Desserts:</label>
@@ -70,11 +70,11 @@
         /><br />
       </div>
 
-      <!-- Submit Button -->
+      
       <button type="button" onclick="submitMenu()">Submit Menu</button>
     </form>
 
-    <!-- Menu Display Section -->
+    
     <div id="menuContainer" class="menu-container" style="display: none">
       <h2>Weekly Menu</h2>
       <div>
@@ -92,27 +92,26 @@
     </div>
 
     <script>
-      // Function to handle menu submission
+      
       function submitMenu() {
-        // Get the values from the form fields
+        
         const startersInput = document.getElementById("starters").value;
         const mainCoursesInput = document.getElementById("mainCourses").value;
         const dessertsInput = document.getElementById("desserts").value;
 
-        // Validate inputs - Ensure each input has at least 5 items
+        
         if (!startersInput || !mainCoursesInput || !dessertsInput) {
           alert("Please fill in all fields.");
           return;
         }
 
-        // Convert input strings into arrays (by splitting the values based on commas)
-        const starters = startersInput.split(",").map((item) => item.trim());
+                const starters = startersInput.split(",").map((item) => item.trim());
         const mainCourses = mainCoursesInput
           .split(",")
           .map((item) => item.trim());
         const desserts = dessertsInput.split(",").map((item) => item.trim());
 
-        // Check if the arrays contain exactly 5 items each
+        
         if (
           starters.length !== 5 ||
           mainCourses.length !== 5 ||
@@ -122,21 +121,21 @@
           return;
         }
 
-        // Show the menu container
+        
         document.getElementById("menuContainer").style.display = "block";
 
-        // Display the menu items
+        
         displayMenu("startersList", starters);
         displayMenu("mainCoursesList", mainCourses);
         displayMenu("dessertsList", desserts);
       }
 
-      // Function to display menu items in the corresponding lists
+      
       function displayMenu(listId, dishes) {
         const list = document.getElementById(listId);
-        list.innerHTML = ""; // Clear existing items
+        list.innerHTML = ""; 
 
-        // Loop through the dishes and add them to the list
+        
         dishes.forEach((dish) => {
           const li = document.createElement("li");
           li.textContent = dish;

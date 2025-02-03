@@ -12,34 +12,32 @@
 
     <script>
       let newWindow;
-
+      
       function openWindow() {
-        // Check if the window is already open and not closed
-        if (newWindow && !newWindow.closed) {
-          alert("The window is already open!");
-        } else {
-          newWindow = window.open(
-            "",
-            "newWindoww",
-            "width=400,height=300,resizable,scrollbars"
-          );
+  if (newWindow && !newWindow.closed) {
+    alert("The window is already open!");
+  } else {
+    newWindow = window.open(
+      "", 
+      "_blank", 
+      "width=400,height=300,resizable,scrollbars"
+    );
 
-          newWindow.document.write(`
-          <html>
-            <head>
-              <title>Controlled Window</title>
-            </head>
-            <body>
-              <h2>This is a controlled window!</h2>
-              <p>The window has been opened with specific properties.</p>
-              <button onclick="window.close()">Close Window</button>
-            </body>
-          </html>`);
-
-          // Ensure the new window is fully loaded
-          newWindow.document.close();
-        }
-      }
+    if (newWindow) {
+      newWindow.document.write(`
+        
+                
+                <p>The window has been opened with specific properties.</p>
+                <button onclick="window.close()">Close Window</button>
+              
+      `);
+      newWindow.document.close();
+    } else {
+      alert("Popup wurde blockiert. Bitte Popups für diese Seite aktivieren.");
+    }
+  }
+}
+    
     </script>
   </body>
 </html>

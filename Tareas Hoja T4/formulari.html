@@ -1,29 +1,34 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario</title>
-    <link rel="stylesheet" href="formulari.css" />
+    <title>Form sheet</title>
+    <link rel="stylesheet" href="formulari.css">
+    <style>
+      
+    </style>
   </head>
+
   <body>
     <div class="form-container">
-      <h2>Formulario de Registro</h2>
+      <h2>Registration</h2>
       <form id="formulario">
-        <!-- Línea 1: Usuario -->
+        
         <div class="form-line">
-          <label for="inputNombre">Usuario:</label>
+          <label for="inputNombre">Username:</label>
           <input type="text" id="inputNombre" name="inputNombre" required />
         </div>
-        <!-- Línea 2: Teléfono -->
+
+        
         <div class="form-line">
-          <label for="inputTelef">Teléfono:</label>
+          <label for="inputTelef">Telephone:</label>
           <input type="tel" id="inputTelef" name="inputTelef" required />
         </div>
-        <!-- Línea 3: Fecha de nacimiento -->
+
+        
         <div class="form-line">
-          <label for="inputDia">Nacimiento:</label>
-          <label for="inputDia">Día:</label>
+          <label for="inputDia">Birthday:</label>
           <input
             type="number"
             id="inputDia"
@@ -32,7 +37,6 @@
             max="31"
             required
           />
-          <label for="inputMes">Mes:</label>
           <input
             type="number"
             id="inputMes"
@@ -41,7 +45,6 @@
             max="12"
             required
           />
-          <label for="inputAno">Año:</label>
           <input
             type="number"
             id="inputAno"
@@ -51,17 +54,20 @@
             required
           />
         </div>
-        <!-- Línea 5: Email -->
+
+        <!-- E-Mail -->
         <div class="form-line">
-          <label for="inputEmail">Email:</label>
+          <label for="inputEmail">E-Mail:</label>
           <input type="email" id="inputEmail" name="inputEmail" required />
         </div>
-        <!-- Línea 6: DNI -->
+
+        <!-- DNI -->
         <div class="form-line">
           <label for="inputDNI">DNI:</label>
           <input type="text" id="inputDNI" name="inputDNI" required />
         </div>
-        <!-- Línea 7: Acepto las condiciones -->
+
+        <!-- Checkbox -->
         <div class="form-line">
           <label for="inputConditions">
             <input
@@ -69,30 +75,36 @@
               id="inputConditions"
               name="inputConditions"
             />
-            Acepto las condiciones
+            I accept the conditions
           </label>
         </div>
-        <!-- Línea 8: Botones -->
+
+        <!-- Buttons -->
         <div class="form-line">
-          <button type="button" onclick="registrar()">Registrarse</button>
+          <button type="button" onclick="registrar()">Registrate</button>
           <button type="button" onclick="limpiarFormulario()">
-            Limpiar formulario
+            reset form
           </button>
-          <button type="button" onclick="guardarDatos()">Guardar datos</button>
+          <button type="button" onclick="guardarDatos()">
+            save Information
+          </button>
           <button type="button" onclick="recuperarDatos()">
-            Recuperar datos
+            recover Information
           </button>
         </div>
       </form>
-      <!-- Línea 9: Área de texto -->
+
+      <!-- Textarea -->
       <textarea
         id="output"
-        placeholder="Información del formulario"
+        placeholder="Informations"
         rows="5"
         cols="50"
       ></textarea>
     </div>
 
-    <script src="formulari.js"></script>
+    <script src="formulari.js">
+      
+    </script>
   </body>
 </html>
