@@ -1,133 +1,131 @@
-
-// let counter;
-
-// function adivinaPalabra() {
-//   const randomIndex = Math.floor(Math.random() * listado.length);
-//   let randomWord = listado[randomIndex].palabra;
-//   console.log(randomWord);
-//   const wordIntoArray = randomWord.split("");
-//   console.log(wordIntoArray);
-//   const container = document.getElementById("container");
-
-//   wordIntoArray.forEach((letter) => {
-//     const div = document.createElement("div");
-//     div.classList.add("box");
-//     div.textContent = letter;
-//     container.appendChild(div);
-//   });
-
-//   const pistaFromArray = listado[randomIndex].pista;
-//   console.log(pistaFromArray);
-//   const pistaParagraph = document.querySelector("#pista");
-//   pistaParagraph.innerHTML = `Pista: <span>${pistaFromArray}</span>`;
-
-//   counter = 8;
-//   const intentos = document.getElementById("intentos");
-//   intentos.innerHTML = `Intentos restantes: <span>${counter}</span>`;
-// }
-
-
-// document.getElementById("container").addEventListener("click", function() {
-//   let input = document.getElementById("hiddenInput");
-//   input.style.pointerEvents = "auto"; // Aktiviert die Interaktion
-//   input.focus();
-// });
-
 let counter;
 let randomWord;
 let wordIntoArray = [];
-let gameOver = false;
+
+//function - button "adivina palabra"
 
 function adivinaPalabra() {
-    gameOver = false;
-    
-    const randomIndex = Math.floor(Math.random() * listado.length);
-    randomWord = listado[randomIndex].palabra.toLowerCase(); // Wort in Kleinbuchstaben
-    console.log(randomWord);
+  //select a random Word from the arrays
 
-    wordIntoArray = randomWord.split("");
-    
-    const container = document.getElementById("container");
-    container.innerHTML = ""; // Vorherige Inhalte entfernen
+  const randomIndex = Math.floor(Math.random() * listado.length);
+  randomWord = listado[randomIndex].palabra.toLowerCase();
+  console.log(randomWord);
 
-    wordIntoArray.forEach(() => {
-        const div = document.createElement("div");
-        div.classList.add("box");
-        div.textContent = "_"; // Platzhalter für noch nicht erratene Buchstaben
-        container.appendChild(div);
-    });
+  //split the word into an array
 
-    document.querySelector(".letrasErroneas").innerHTML = ""; // Fehler zurücksetzen
-    document.querySelector(".mostra").innerHTML = ""; // Anzeige zurücksetzen
+  wordIntoArray = randomWord.split("");
 
-    const pistaFromArray = listado[randomIndex].pista;
-    document.querySelector("#pista").innerHTML = `Pista: <span>${pistaFromArray}</span>`;
+  //delete the previous content
 
-    counter = 8;
-    document.getElementById("intentos").innerHTML = `Intentos restantes: <span>${counter}</span>`;
+  const container = document.getElementById("container");
+  container.innerHTML = "";
+
+  //one div of the class box for each letter
+
+  wordIntoArray.forEach((letter) => {
+    const div = document.createElement("div");
+    div.classList.add("box");
+    div.textContent = letter;
+    container.appendChild(div);
+  });
+
+  //Rest of the wrong letters and the mostra div
+
+  document.querySelector(".letrasErroneas").innerHTML = "Letras erroneas:";
+  document.querySelector(".mostra").innerHTML = "";
+
+  //Select the PISTA related to the word
+
+  const pistaFromArray = listado[randomIndex].pista;
+  document.querySelector(
+    "#pista"
+  ).innerHTML = `Pista: <span>${pistaFromArray}</span>`;
+
+  // change the COUNTER to 8
+  counter = 8;
+  document.getElementById(
+    "intentos"
+  ).innerHTML = `Intentos restantes: <span>${counter}</span>`;
 }
 
-// 1. Eingabefeld aktivieren und nur Buchstaben akzeptieren
-document.addEventListener("keydown", function(event) {
-    if (gameOver) return; // Falls das Spiel vorbei ist, keine Eingaben mehr erlauben
+// document.addEventListener("keydown", function (event) {
+//   if (gameOver) return;
 
-    if (/^[a-zA-Z]$/.test(event.key) && event.key.length === 1) {
-        let input = document.getElementById("hiddenInput");
-        input.style.pointerEvents = "auto";
-        input.focus();
+//   //Input just a letter?
 
-        checkLetter(event.key.toLowerCase());
-    }
-});
+//   if (/^[a-zA-Z]$/.test(event.key) && event.key.length === 1) {
+//     let input = document.getElementById("inputField");
+//     input.style.pointerEvents = "auto";
+//     input.focus();
 
-// 2. Prüfen, ob der eingegebene Buchstabe im Wort enthalten ist
-function checkLetter(letter) {
-    if (gameOver) return;
+//     checkLetter(event.key.toLowerCase());
+//   }
+// });
 
-    const boxes = document.querySelectorAll(".box");
-    let found = false;
+// // 2. Check if the letter is included
 
-    wordIntoArray.forEach((char, index) => {
-        if (char === letter) {
-            boxes[index].textContent = letter; // Buchstaben anzeigen
-            found = true;
-        }
-    });
+// function checkLetter(letter) {
+//   if (gameOver) return;
 
-    if (!found) {
-        counter--;
-        document.getElementById("intentos").innerHTML = `Intentos restantes: <span>${counter}</span>`;
-        document.querySelector(".letrasErroneas").innerHTML += `${letter.toUpperCase()} `; // 6. Falsche Buchstaben anzeigen
-    }
+//   const boxes = document.querySelectorAll(".box");
+//   let found = false;
 
-    checkWinOrLose(); // 7. und 8. Erfolg oder Niederlage prüfen
-}
+//   // show the letter
 
-// 7. Prüfen, ob alle Buchstaben erraten wurden
-function checkWinOrLose() {
-    const boxes = document.querySelectorAll(".box");
+//   wordIntoArray.forEach((char, index) => {
+//     if (char === letter) {
+//       boxes[index].textContent = letter;
+//       found = true;
+//     }
+//   });
 
-    if ([...boxes].every(box => box.textContent !== "_")) {
-        gameOver = true;
-        const randomMsg = msg[Math.floor(Math.random() * msg.length)]; // Zufällige Erfolgsmeldung
-        document.querySelector(".mostra").innerHTML = `<p>${randomMsg}</p>`;
-        return;
-    }
+//   // NOT FOUND
 
-    // 8. Prüfen, ob der Counter auf 0 ist
-    if (counter === 0) {
-        gameOver = true;
-        const randomMsgError = msgError[Math.floor(Math.random() * msgError.length)]; // Zufällige Fehlernachricht
-        document.querySelector(".mostra").innerHTML = `<p>${randomMsgError}</p>`;
+//   if (!found) {
+//     counter--;
+//     document.getElementById(
+//       "intentos"
+//     ).innerHTML = `Intentos restantes: <span>${counter}</span>`;
+//     document.querySelector(
+//       ".letrasErroneas"
+//     ).innerHTML += `${letter.toUpperCase()} `;
+//   }
 
-        setTimeout(() => {
-            const weiter = confirm("Game Over! Möchtest du weiterspielen?");
-            if (weiter) {
-                adivinaPalabra(); // Neues Spiel starten
-            } else {
-                window.location.href = "https://www.google.com"; // Google öffnen
-            }
-        }, 500);
-    }
-}
+//   checkWinOrLose();
+// }
 
+// // Did I win???
+
+// function checkWinOrLose() {
+//   const boxes = document.querySelectorAll(".box");
+//   palabra = randomWord;
+
+//   // If every letters was guessed, show me a winning message from the array msg
+
+//   if (boxes.every((box) => box.textContent !== "_")) {
+//     gameOver = true;
+//     const randomMsg = msg[Math.floor(Math.random() * msg.length)];
+//     document.getElementById("mostra").textContent = randomMsg;
+//     return;
+//   }
+
+//   // if the counter reached 0, show a losing message from the array msgError
+
+//   if (counter === 0) {
+//     gameOver = true;
+//     const randomMsgError =
+//       msgError[Math.floor(Math.random() * msgError.length)];
+//     document.getElementById("mostra").innerHTML = randomMsgError;
+
+//     // oeffne ein confirmfenster, dass einen bittet von vorne zu starten oder abzubrechen(man wird dann zu google verlinkt)
+
+//     setTimeout(() => {
+//       const weiter = confirm("Game Over! Möchtest du weiterspielen?");
+//       if (weiter) {
+//         adivinaPalabra(); // Neues Spiel starten
+//       } else {
+//         window.location.href = "https://www.google.com"; // Google öffnen
+//       }
+//     }, 500);
+//   }
+// }
