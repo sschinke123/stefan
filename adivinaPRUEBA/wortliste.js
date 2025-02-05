@@ -1,0 +1,22 @@
+const listado = [
+  { palabra: "computer", pista: "Elektronisches Gerät" },
+  { palabra: "banane", pista: "Gelbe Frucht" },
+  { palabra: "auto", pista: "Fahrzeug mit vier Rädern" },
+  { palabra: "haus", pista: "Ort zum Wohnen" },
+  { palabra: "schule", pista: "Ort zum Lernen" },
+  { palabra: "sonne", pista: "Leuchtet am Himmel" },
+  { palabra: "wolke", pista: "Weiß und am Himmel" },
+  { palabra: "telefon", pista: "Wird zum Sprechen benutzt" },
+  { palabra: "stuhl", pista: "Zum Sitzen" },
+  { palabra: "fenster", pista: "Durchsichtig in Wänden" },
+  { palabra: "regen", pista: "Wasser vom Himmel" },
+  { palabra: "zug", pista: "Fährt auf Schienen" },
+  { palabra: "garten", pista: "Grüner Außenbereich" },
+  { palabra: "strand", pista: "Neben dem Meer" },
+  { palabra: "tisch", pista: "Zum Essen oder Arbeiten" },
+  { palabra: "hund", pista: "Bester Freund des Menschen" },
+  { palabra: "katze", pista: "Schnurrendes Haustier" },
+  { palabra: "blume", pista: "Pflanze mit schönen Farben" },
+  { palabra: "schrank", pista: "Zum Verstauen von Dingen" },
+  { palabra: "buch", pista: "Zum Lesen" }
+];

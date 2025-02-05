@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.game-container {
+    width: 400px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.box {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#hiddenInput {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.letrasErroneas {
+    font-weight: bold;
+    color: red;
+}
+
+.mostra {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}

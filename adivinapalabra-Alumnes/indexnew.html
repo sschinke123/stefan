@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdivinaPalabra</title>
+    <style>body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: orange;
+    }
+    
+    .game-container {
+        
+        background: white;
+        padding: 20px;
+          
+    }
+    
+    #container {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+    }
+    
+    .box {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #hiddenInput {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+          
+    .mostra {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+    }</style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Palabra a adivinar</h1>
+        
+        <div id="container"></div>
+        <button id="startGame">Empieza</button>
+        <p id="pista">Pista: <span>-</span></p>
+        <p>Letras Erroneas: <span class="letrasErroneas"></span></p>
+        <p id="intentos">Intentos: <span>8</span></p>
+        <p class="mostra"></p>
+        <input type="text" id="hiddenInput" autocomplete="off">
+    </div>
+    
+    <script src="js/listadoPalabras.js"></script>
+    <script src="js/mensajes.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

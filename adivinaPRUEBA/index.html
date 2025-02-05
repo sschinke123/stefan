@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worträtsel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Worträtsel</h1>
+        <button id="startGame">🔍 Wort erraten</button>
+        <p id="pista">Hinweis: <span>-</span></p>
+        <div id="container"></div>
+        <p>Falsche Buchstaben: <span class="letrasErroneas"></span></p>
+        <p id="intentos">Versuche übrig: <span>8</span></p>
+        <p class="mostra"></p>
+        <input type="text" id="hiddenInput" autocomplete="off">
+    </div>
+    
+    <script src="wortliste.js"></script>
+    <script src="nachrichten.js"></script>
+    <script src="spiel.js"></script>
+</body>
+</html>
