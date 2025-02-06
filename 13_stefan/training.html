@@ -86,51 +86,129 @@
       //Funciones en JS. Devolviendo un valor
       //////////////////////////////////////////////////////////////////////////
 
-      let recarga = function recarga() {
-        if (confirm("Atención! Los datos se borrarán.")) {
-          location.reload(true);
-          return true;
-        } else {
-          return false;
-        }
-      };
+      // let recarga = function recarga() {
+      //   if (confirm("Atención! Los datos se borrarán.")) {
+      //     location.reload(true);
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // };
 
-      window.onclick = recarga;
+      // let recarga = function recarga() {
+      //   if (confirm("Atención! Los datos se borrarán.")) {
+      //     location.reload(true);
+      //     console.log(true); 
+      //     return true;
+      //   } else {
+      //     console.log(false); 
+      //     return false;
+      //   }};window.onclick = recarga;
 
-      let recarga = function recarga() {
-        if (confirm("Atención! Los datos se borrarán.")) {
-          location.reload(true);
-          console.log(true); // Zeigt true an, wenn der Benutzer "OK" klickt
-          return true;
-        } else {
-          console.log(false); // Zeigt false an, wenn der Benutzer "Abbrechen" klickt
-          return false;
-        }
-      };
+      ///////////////////////////////////////////////////////////////////////////
+      //Arrow functions
+      //////////////////////////////////////////////////////////////////////////
+
+//       let recarga = function recarga(){
+// if(confirm('Atención! BORRAMOS.')){
+// location.reload(true);
+// return true;
+// }return
+// false; };
+
+// function suma1(a, b){
+// let resul = a+b;
+// alert(resul); }
+
+
+// (declaración directa arrow function)
+// let recarga = () =>{... }
+// let suma1 = (a,b)=>{... }
 
       ///////////////////////////////////////////////////////////////////////////
       //FUNCTION
       //////////////////////////////////////////////////////////////////////////
 
-      ///////////////////////////////////////////////////////////////////////////
-      //FUNCTION
-      //////////////////////////////////////////////////////////////////////////
+//       Event-Kategorie	Event-Name	Beschreibung	Beispiel
+// Maus-Events	onclick	Klick auf ein Element	<button onclick="alert('Hallo!')">Klick mich</button>
+// ondblclick	Doppelklick auf ein Element	<button ondblclick="alert('Doppelklick!')">Doppelklick</button>
+// onmousedown	Maustaste wird gedrückt	<div onmousedown="console.log('Maus gedrückt')">Drück mich</div>
+// onmousemove	Maus bewegt sich über das Element	<div onmousemove="console.log('Maus bewegt')">Bewege die Maus</div>
+// onmouseover	Maus betritt ein Element	<div onmouseover="console.log('Maus rein')">Hover mich</div>
+// onmouseout	Maus verlässt ein Element	<div onmouseout="console.log('Maus raus')">Verlasse mich</div>
+// onmouseup	Maustaste wird losgelassen	<div onmouseup="console.log('Maus losgelassen')">Lass mich los</div>
+// Tastatur-Events	onkeydown	Taste wird gedrückt (inkl. Halten)	<input onkeydown="console.log('Taste gedrückt')">
+// onkeypress	Taste wird gedrückt (veraltet)	<input onkeypress="console.log('Taste gedrückt')">
+// onkeyup	Taste wird losgelassen	<input onkeyup="console.log('Taste losgelassen')">
+// Objekt-Events	onload	Seite oder Element wird geladen	<body onload="console.log('Seite geladen')">
+// onresize	Fenstergröße wird geändert	window.onresize = () => console.log('Fenstergröße geändert');
+// onscroll	Seite wird gescrollt	window.onscroll = () => console.log('Gesrollt!');
+// onunload	Seite wird verlassen	<body onunload="console.log('Seite verlassen')">
+// Formular-Events	onblur	Fokus geht verloren	<input onblur="console.log('Fokus verloren')">
+// onfocus	Element bekommt Fokus	<input onfocus="console.log('Fokus erhalten')">
+// onselect	Text wird markiert	<input onselect="console.log('Text markiert')">
+// onchange	Wert eines Inputs ändert sich	<input onchange="console.log('Wert geändert')">
+// onsubmit	Formular wird abgeschickt	<form onsubmit="console.log('Formular gesendet')"><button type='submit'>Senden</button></form>
+// onreset	Formular wird zurückgesetzt	<form onreset="console.log('Formular zurückgesetzt')"><button type='reset'>Reset</button></form>
 
       ///////////////////////////////////////////////////////////////////////////
-      //FUNCTION
+      // Event in HTML ausführen
       //////////////////////////////////////////////////////////////////////////
 
-      ///////////////////////////////////////////////////////////////////////////
-      //FUNCTION
-      //////////////////////////////////////////////////////////////////////////
+      // Ein Event in HTML zu erfassen (capturar un evento) bedeutet, dass wir eine Funktion ausführen, wenn ein bestimmtes Ereignis (z. B. ein Klick oder das Laden der Seite) auftritt.
+
+//       ESTABLECER CAPTURADOR EN CÓDIGO
+// <div id ="divAzul" onclick ="ejecutaEsto();"> </div>
+
+// <body onload="ejecutaEsto()">
+
+// AÑADIR FUNCIONES A UN EVENTO EN CÓDIGO
+// <body onload="ejecutaEsto(); estoTambien(); ">
 
       ///////////////////////////////////////////////////////////////////////////
-      //FUNCTION
+      //Capturar un Evento por JS
       //////////////////////////////////////////////////////////////////////////
 
+
+// Methode	Code	Beschreibung
+// Funktion in einer Konstante definieren	const miFuncion = function ejecutaEsto(){ /* Code */ };	Erstellt eine Funktion und speichert sie in einer Konstanten.
+// Funktion in einer weiteren Konstante	const miFuncion2 = function estoTambien(){ /* Code */ };	Eine zweite Funktion wird definiert.
+// Event direkt im JavaScript setzen	window.onload = miFuncion;	Führt miFuncion aus, sobald die Seite geladen ist.
+// elem.onclick = miFuncion2;	Führt miFuncion2 aus, wenn auf elem geklickt wird.
+// Anonyme Funktion direkt zuweisen	window.onload = function(){ /* Code */ };	Direkt eine anonyme Funktion beim Laden der Seite zuweisen.
+// Event mit addEventListener hinzufügen	window.addEventListener("load", miFuncion);	Fügt miFuncion als Event-Listener für das load-Event hinzu.
+// window.addEventListener("load", miFuncion2);	Fügt zusätzlich miFuncion2 als Event-Listener hinzu.
+// Anonyme Funktion mit addEventListener	elem.addEventListener("click", () => { /* Code */ });	Fügt eine anonyme Funktion für das click-Event von elem hinzu.
+
       ///////////////////////////////////////////////////////////////////////////
-      //FUNCTION
+      //ARRAY
       //////////////////////////////////////////////////////////////////////////
+
+//       let myArray1 = new Array(6);
+// myArray1[0] = 100;
+// myArray1[1] = 300;
+// myArray1[2] = 500;
+// myArray1[5] = 300;
+
+// [4][5] undefined
+
+// let myArray2 = new Array(); •Sin indicar el numero de elementos
+
+// •Igualándolo a otro array, declaración habitual
+
+// let myArray4 = ["precio", "producto"];
+
+      ///////////////////////////////////////////////////////////////////////////
+      //ARRAY Methods
+      //////////////////////////////////////////////////////////////////////////
+
+//       Methode	Beschreibung	Beispiel	Rückgabewert
+// concat()	Verbindet zwei Arrays und gibt ein neues Array zurück.	let neuArray = [1, 2].concat([3, 4]);	[1, 2, 3, 4]
+// indexOf()	Sucht nach einem Wert im Array und gibt den Index des ersten Vorkommens zurück (oder -1, falls nicht gefunden).	let index = [10, 20, 30].indexOf(20);	1
+// push()	Fügt ein Element am Ende des Arrays hinzu.	let arr = [1, 2]; arr.push(3);	3 (neue Länge des Arrays)
+// unshift()	Fügt ein Element am Anfang des Arrays hinzu.	let arr = [2, 3]; arr.unshift(1);	3 (neue Länge des Arrays)
+// pop()	Entfernt das letzte Element des Arrays und gibt es zurück.	let arr = [1, 2, 3]; let last = arr.pop();	3
+// shift()	Entfernt das erste Element des Arrays und gibt es zurück.	let arr = [1, 2, 3]; let first = arr.shift();	1
 
       ///////////////////////////////////////////////////////////////////////////
       //FUNCTION
