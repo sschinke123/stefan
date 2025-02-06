@@ -7,6 +7,13 @@
   </head>
   <body>
     <!-- <div onclick="suma1(10,90);">Suma</div> -->
+    <select name="listado" id="listado" multiple>
+      <option value="1">uno</option>
+      <option value="2">dos</option>
+      <option value="3">tres</option>
+    </select>
+
+    <button onclick="mostrarSeleccion()">Prüfen</button>
     <script>
       // let numero = window.prompt("Choose a number");
       // console.log("Your number: " + numero)
@@ -98,10 +105,10 @@
       // let recarga = function recarga() {
       //   if (confirm("Atención! Los datos se borrarán.")) {
       //     location.reload(true);
-      //     console.log(true); 
+      //     console.log(true);
       //     return true;
       //   } else {
-      //     console.log(false); 
+      //     console.log(false);
       //     return false;
       //   }};window.onclick = recarga;
 
@@ -109,47 +116,46 @@
       //Arrow functions
       //////////////////////////////////////////////////////////////////////////
 
-//       let recarga = function recarga(){
-// if(confirm('Atención! BORRAMOS.')){
-// location.reload(true);
-// return true;
-// }return
-// false; };
+      //       let recarga = function recarga(){
+      // if(confirm('Atención! BORRAMOS.')){
+      // location.reload(true);
+      // return true;
+      // }return
+      // false; };
 
-// function suma1(a, b){
-// let resul = a+b;
-// alert(resul); }
+      // function suma1(a, b){
+      // let resul = a+b;
+      // alert(resul); }
 
-
-// (declaración directa arrow function)
-// let recarga = () =>{... }
-// let suma1 = (a,b)=>{... }
+      // (declaración directa arrow function)
+      // let recarga = () =>{... }
+      // let suma1 = (a,b)=>{... }
 
       ///////////////////////////////////////////////////////////////////////////
-      //FUNCTION
+      //Event-Kategorie
       //////////////////////////////////////////////////////////////////////////
 
-//       Event-Kategorie	Event-Name	Beschreibung	Beispiel
-// Maus-Events	onclick	Klick auf ein Element	<button onclick="alert('Hallo!')">Klick mich</button>
-// ondblclick	Doppelklick auf ein Element	<button ondblclick="alert('Doppelklick!')">Doppelklick</button>
-// onmousedown	Maustaste wird gedrückt	<div onmousedown="console.log('Maus gedrückt')">Drück mich</div>
-// onmousemove	Maus bewegt sich über das Element	<div onmousemove="console.log('Maus bewegt')">Bewege die Maus</div>
-// onmouseover	Maus betritt ein Element	<div onmouseover="console.log('Maus rein')">Hover mich</div>
-// onmouseout	Maus verlässt ein Element	<div onmouseout="console.log('Maus raus')">Verlasse mich</div>
-// onmouseup	Maustaste wird losgelassen	<div onmouseup="console.log('Maus losgelassen')">Lass mich los</div>
-// Tastatur-Events	onkeydown	Taste wird gedrückt (inkl. Halten)	<input onkeydown="console.log('Taste gedrückt')">
-// onkeypress	Taste wird gedrückt (veraltet)	<input onkeypress="console.log('Taste gedrückt')">
-// onkeyup	Taste wird losgelassen	<input onkeyup="console.log('Taste losgelassen')">
-// Objekt-Events	onload	Seite oder Element wird geladen	<body onload="console.log('Seite geladen')">
-// onresize	Fenstergröße wird geändert	window.onresize = () => console.log('Fenstergröße geändert');
-// onscroll	Seite wird gescrollt	window.onscroll = () => console.log('Gesrollt!');
-// onunload	Seite wird verlassen	<body onunload="console.log('Seite verlassen')">
-// Formular-Events	onblur	Fokus geht verloren	<input onblur="console.log('Fokus verloren')">
-// onfocus	Element bekommt Fokus	<input onfocus="console.log('Fokus erhalten')">
-// onselect	Text wird markiert	<input onselect="console.log('Text markiert')">
-// onchange	Wert eines Inputs ändert sich	<input onchange="console.log('Wert geändert')">
-// onsubmit	Formular wird abgeschickt	<form onsubmit="console.log('Formular gesendet')"><button type='submit'>Senden</button></form>
-// onreset	Formular wird zurückgesetzt	<form onreset="console.log('Formular zurückgesetzt')"><button type='reset'>Reset</button></form>
+      //       Event-Kategorie	Event-Name	Beschreibung	Beispiel
+      // Maus-Events	onclick	Klick auf ein Element	<button onclick="alert('Hallo!')">Klick mich</button>
+      // ondblclick	Doppelklick auf ein Element	<button ondblclick="alert('Doppelklick!')">Doppelklick</button>
+      // onmousedown	Maustaste wird gedrückt	<div onmousedown="console.log('Maus gedrückt')">Drück mich</div>
+      // onmousemove	Maus bewegt sich über das Element	<div onmousemove="console.log('Maus bewegt')">Bewege die Maus</div>
+      // onmouseover	Maus betritt ein Element	<div onmouseover="console.log('Maus rein')">Hover mich</div>
+      // onmouseout	Maus verlässt ein Element	<div onmouseout="console.log('Maus raus')">Verlasse mich</div>
+      // onmouseup	Maustaste wird losgelassen	<div onmouseup="console.log('Maus losgelassen')">Lass mich los</div>
+      // Tastatur-Events	onkeydown	Taste wird gedrückt (inkl. Halten)	<input onkeydown="console.log('Taste gedrückt')">
+      // onkeypress	Taste wird gedrückt (veraltet)	<input onkeypress="console.log('Taste gedrückt')">
+      // onkeyup	Taste wird losgelassen	<input onkeyup="console.log('Taste losgelassen')">
+      // Objekt-Events	onload	Seite oder Element wird geladen	<body onload="console.log('Seite geladen')">
+      // onresize	Fenstergröße wird geändert	window.onresize = () => console.log('Fenstergröße geändert');
+      // onscroll	Seite wird gescrollt	window.onscroll = () => console.log('Gesrollt!');
+      // onunload	Seite wird verlassen	<body onunload="console.log('Seite verlassen')">
+      // Formular-Events	onblur	Fokus geht verloren	<input onblur="console.log('Fokus verloren')">
+      // onfocus	Element bekommt Fokus	<input onfocus="console.log('Fokus erhalten')">
+      // onselect	Text wird markiert	<input onselect="console.log('Text markiert')">
+      // onchange	Wert eines Inputs ändert sich	<input onchange="console.log('Wert geändert')">
+      // onsubmit	Formular wird abgeschickt	<form onsubmit="console.log('Formular gesendet')"><button type='submit'>Senden</button></form>
+      // onreset	Formular wird zurückgesetzt	<form onreset="console.log('Formular zurückgesetzt')"><button type='reset'>Reset</button></form>
 
       ///////////////////////////////////////////////////////////////////////////
       // Event in HTML ausführen
@@ -157,71 +163,410 @@
 
       // Ein Event in HTML zu erfassen (capturar un evento) bedeutet, dass wir eine Funktion ausführen, wenn ein bestimmtes Ereignis (z. B. ein Klick oder das Laden der Seite) auftritt.
 
-//       ESTABLECER CAPTURADOR EN CÓDIGO
-// <div id ="divAzul" onclick ="ejecutaEsto();"> </div>
+      //       ESTABLECER CAPTURADOR EN CÓDIGO
+      // <div id ="divAzul" onclick ="ejecutaEsto();"> </div>
 
-// <body onload="ejecutaEsto()">
+      // <body onload="ejecutaEsto()">
 
-// AÑADIR FUNCIONES A UN EVENTO EN CÓDIGO
-// <body onload="ejecutaEsto(); estoTambien(); ">
+      // AÑADIR FUNCIONES A UN EVENTO EN CÓDIGO
+      // <body onload="ejecutaEsto(); estoTambien(); ">
 
       ///////////////////////////////////////////////////////////////////////////
       //Capturar un Evento por JS
       //////////////////////////////////////////////////////////////////////////
 
-
-// Methode	Code	Beschreibung
-// Funktion in einer Konstante definieren	const miFuncion = function ejecutaEsto(){ /* Code */ };	Erstellt eine Funktion und speichert sie in einer Konstanten.
-// Funktion in einer weiteren Konstante	const miFuncion2 = function estoTambien(){ /* Code */ };	Eine zweite Funktion wird definiert.
-// Event direkt im JavaScript setzen	window.onload = miFuncion;	Führt miFuncion aus, sobald die Seite geladen ist.
-// elem.onclick = miFuncion2;	Führt miFuncion2 aus, wenn auf elem geklickt wird.
-// Anonyme Funktion direkt zuweisen	window.onload = function(){ /* Code */ };	Direkt eine anonyme Funktion beim Laden der Seite zuweisen.
-// Event mit addEventListener hinzufügen	window.addEventListener("load", miFuncion);	Fügt miFuncion als Event-Listener für das load-Event hinzu.
-// window.addEventListener("load", miFuncion2);	Fügt zusätzlich miFuncion2 als Event-Listener hinzu.
-// Anonyme Funktion mit addEventListener	elem.addEventListener("click", () => { /* Code */ });	Fügt eine anonyme Funktion für das click-Event von elem hinzu.
+      // Methode	Code	Beschreibung
+      // Funktion in einer Konstante definieren	const miFuncion = function ejecutaEsto(){ /* Code */ };	Erstellt eine Funktion und speichert sie in einer Konstanten.
+      // Funktion in einer weiteren Konstante	const miFuncion2 = function estoTambien(){ /* Code */ };	Eine zweite Funktion wird definiert.
+      // Event direkt im JavaScript setzen	window.onload = miFuncion;	Führt miFuncion aus, sobald die Seite geladen ist.
+      // elem.onclick = miFuncion2;	Führt miFuncion2 aus, wenn auf elem geklickt wird.
+      // Anonyme Funktion direkt zuweisen	window.onload = function(){ /* Code */ };	Direkt eine anonyme Funktion beim Laden der Seite zuweisen.
+      // Event mit addEventListener hinzufügen	window.addEventListener("load", miFuncion);	Fügt miFuncion als Event-Listener für das load-Event hinzu.
+      // window.addEventListener("load", miFuncion2);	Fügt zusätzlich miFuncion2 als Event-Listener hinzu.
+      // Anonyme Funktion mit addEventListener	elem.addEventListener("click", () => { /* Code */ });	Fügt eine anonyme Funktion für das click-Event von elem hinzu.
 
       ///////////////////////////////////////////////////////////////////////////
       //ARRAY
       //////////////////////////////////////////////////////////////////////////
 
-//       let myArray1 = new Array(6);
-// myArray1[0] = 100;
-// myArray1[1] = 300;
-// myArray1[2] = 500;
-// myArray1[5] = 300;
+      //       let myArray1 = new Array(6);
+      // myArray1[0] = 100;
+      // myArray1[1] = 300;
+      // myArray1[2] = 500;
+      // myArray1[5] = 300;
 
-// [4][5] undefined
+      // [4][5] undefined
 
-// let myArray2 = new Array(); •Sin indicar el numero de elementos
+      // let myArray2 = new Array(); •Sin indicar el numero de elementos
 
-// •Igualándolo a otro array, declaración habitual
+      // •Igualándolo a otro array, declaración habitual
 
-// let myArray4 = ["precio", "producto"];
+      // let myArray4 = ["precio", "producto"];
 
       ///////////////////////////////////////////////////////////////////////////
       //ARRAY Methods
       //////////////////////////////////////////////////////////////////////////
 
-//       Methode	Beschreibung	Beispiel	Rückgabewert
-// concat()	Verbindet zwei Arrays und gibt ein neues Array zurück.	let neuArray = [1, 2].concat([3, 4]);	[1, 2, 3, 4]
-// indexOf()	Sucht nach einem Wert im Array und gibt den Index des ersten Vorkommens zurück (oder -1, falls nicht gefunden).	let index = [10, 20, 30].indexOf(20);	1
-// push()	Fügt ein Element am Ende des Arrays hinzu.	let arr = [1, 2]; arr.push(3);	3 (neue Länge des Arrays)
-// unshift()	Fügt ein Element am Anfang des Arrays hinzu.	let arr = [2, 3]; arr.unshift(1);	3 (neue Länge des Arrays)
-// pop()	Entfernt das letzte Element des Arrays und gibt es zurück.	let arr = [1, 2, 3]; let last = arr.pop();	3
-// shift()	Entfernt das erste Element des Arrays und gibt es zurück.	let arr = [1, 2, 3]; let first = arr.shift();	1
+      //       Methode	Beschreibung	Beispiel	Rückgabewert
+      // concat()	Verbindet zwei Arrays und gibt ein neues Array zurück.	let neuArray = [1, 2].concat([3, 4]);	[1, 2, 3, 4]
+      // indexOf()	Sucht nach einem Wert im Array und gibt den Index des ersten Vorkommens zurück (oder -1, falls nicht gefunden).	let index = [10, 20, 30].indexOf(20);	1
+      // push()	Fügt ein Element am Ende des Arrays hinzu.	let arr = [1, 2]; arr.push(3);	3 (neue Länge des Arrays)
+      // unshift()	Fügt ein Element am Anfang des Arrays hinzu.	let arr = [2, 3]; arr.unshift(1);	3 (neue Länge des Arrays)
+      // pop()	Entfernt das letzte Element des Arrays und gibt es zurück.	let arr = [1, 2, 3]; let last = arr.pop();	3
+      // shift()	Entfernt das erste Element des Arrays und gibt es zurück.	let arr = [1, 2, 3]; let first = arr.shift();	1
 
       ///////////////////////////////////////////////////////////////////////////
-      //FUNCTION
+      //HTML <input>-Typen in JavaScript,
+      //////////////////////////////////////////////////////////////////////////
+
+      // Input-Typ	Beschreibung	Beispiel HTML
+      // text	Ermöglicht das Eingeben von Text.	<input type="text" value="Beispieltext">
+      // password	Ermöglicht das Eingeben von Passwort (Maskierung).	<input type="password" value="geheim">
+      // email	Ermöglicht die Eingabe einer E-Mail-Adresse.	<input type="email" value="beispiel@example.com">
+      // number	Ermöglicht die Eingabe von Zahlen.	<input type="number" value="42" min="1" max="100">
+      // tel	Ermöglicht die Eingabe einer Telefonnummer.	<input type="tel" value="+49 170 1234567">
+      // url	Ermöglicht die Eingabe einer URL.	<input type="url" value="https://www.example.com">
+      // search	Ermöglicht die Eingabe eines Suchbegriffs.	<input type="search" value="JavaScript">
+      // date	Ermöglicht die Auswahl eines Datums.	<input type="date" value="2025-02-06">
+      // time	Ermöglicht die Auswahl einer Uhrzeit.	<input type="time" value="14:30">
+      // datetime-local	Ermöglicht die Auswahl von Datum und Uhrzeit.	<input type="datetime-local" value="2025-02-06T14:30">
+      // month	Ermöglicht die Auswahl eines Monats.	<input type="month" value="2025-02">
+      // week	Ermöglicht die Auswahl einer Kalenderwoche.	<input type="week" value="2025-W05">
+      // checkbox	Ermöglicht die Auswahl eines Kontrollkästchens.	<input type="checkbox" checked>
+      // radio	Ermöglicht die Auswahl einer Option aus mehreren.	<input type="radio" name="geschlecht" value="m" checked> Männlich
+      // file	Ermöglicht die Auswahl einer Datei.	<input type="file" multiple>
+      // range	Ermöglicht die Auswahl eines Werts aus einem Bereich.	<input type="range" value="50" min="0" max="100">
+      // color	Ermöglicht die Auswahl einer Farbe.	<input type="color" value="#ff0000">
+      // hidden	Ein unsichtbares Eingabefeld.	<input type="hidden" value="geheimeDaten">
+      // submit	Ein Button zum Absenden des Formulars.	<input type="submit" value="Absenden">
+      // reset	Ein Button zum Zurücksetzen des Formulars.	<input type="reset" value="Zurücksetzen">
+      // button	Ein Button für benutzerdefinierte Funktionen.	<input type="button" value="Klick mich" onclick="alert('Hallo!')">
+      // image	Ein Bild-Button zum Absenden eines Formulars.	<input type="image" src="submit.png" alt="Absenden">
+
+      ///////////////////////////////////////////////////////////////////////////
+      //Acceder a los Inputs con JS
+      //////////////////////////////////////////////////////////////////////////
+
+      // <form name="miFormulario" > let formulario = document.forms["miFormulario"];
+
+      //   <input type="text" name="texto" /> let text = formulario["texto"].value;
+
+      ///////////////////////////////////////////////////////////////////////////
+      //Acceder a Checkbox y Radio input
+      //////////////////////////////////////////////////////////////////////////
+
+      //       Hombre <input type ="radio" name ="sex" value ="male">
+      // Mujer<input type="radio" name ="sex" value ="female">
+
+      // const radios = formulario["sex"];//array con los radio de name="sex"
+      // const radio  = "";
+      // for(let k=0; k< radios.length; k++){
+      // if(radios[k].checked == true){
+      // radio= radios[k].value;
+      // break;
+      // }
+      // }
+
+      // <input type ="checkbox" name="vehicle" value="bike"> I have a bike
+      // <br />
+      // <input type ="checkbox" name="vehicle" value="car"> I have a car
+      // <br />
+      // const checkboxs = formulario["vehicle"]; //array con los checkbox de name="vehicle"
+      // for(let k=0; k< checkboxs.length; k++){
+      // if(checkboxs[k].checked== true){
+      // alert("selected: " +checkboxs[k].value);
+      // }
+      // }
+      ///////////////////////////////////////////////////////////////////////////
+      //Validar un Formulario con JS
+      //////////////////////////////////////////////////////////////////////////
+
+      //             • Para validar un formulario antes de ser enviado, se debe realizar onsubmit. Si se retorna un
+      //       false, no se enviará.
+
+      //       <form action=“codigo.php" onsubmit="return validaForm();">
+
+      // Nombre<input type="text" name="name" onblur="validaNom()" >
+
+      // <input type="submit“ ></form>
+
+      //       function validaForm(){
+      // let formulario = document.forms["miFormulario"]; let text = formulario["name"].value;
+      // if(text=="pedro"){
+      // return true;
+      // }
+      // return false;}
+
+      ///////////////////////////////////////////////////////////////////////////
+      //COOKIES
+      //////////////////////////////////////////////////////////////////////////
+
+      //             • Variablen, die mit einer Website verbunden sind, werden im Browser und auf dem Server gespeichert.
+      //       • Sie werden vom Browser zum Server und umgekehrt gesendet.
+      //       • Sie sind immer vom Server aus zugänglich und in manchen Fällen auch vom Browser mit JavaScript.
+
+      //       Crear / Modificar /Borrar / Leer una Cookie de forma nativa
+      // document.cookie='nom=James';
+
+      // document.cookie='nom=James;expires=Thu, 2 Aug 2020 20:47:11 UTC;' ;
+      // document.cookie='apellido=Bond';
+
+      // document.cookie=‘nom=Jaime’;
+
+      // textoGuardado=hola; nom=Jaime; apellido=Bond
+
+      // •Podemos utilizar el siguiente código para crear/modificar el valor de una cookie
+
+      //             function setCookie(cname, cvalue, exdays) {
+      //               let d = new Date();
+      //               d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+      //               let expires = "expires=" + d.toGMTString();
+      //               document.cookie = cname + "=" + cvalue + "; " + expires;
+      //             }
+
+      //             cname es el nombre de la cookie a guardar y cvalue es el nombre del valor.
+      //       •exdays es el número de dias que va a vivir la cookie. Con un valor negativo la cookie se borrará
+
+      //       Ejemplo de utilización:
+
+      //       function guardarValor()
+      // {let texto = window.prompt("indica un valor");
+
+      // setCookie("textoGuardado",texto,5 );
+      // }
+
+      ///////////////////////////////////////////////////////////////////////////
+      //Leer una Cookie
+      //////////////////////////////////////////////////////////////////////////
+
+      // function getCookie(cname) {
+      //   let name = cname + "=";
+      //   let ca = document.cookie.split(";");
+      //   for (let i = 0; i < ca.length; i++) {
+      //     let c = ca[i].trim();
+      //     if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+      //   }
+      //   return "";
+      // }
+
+      //       Leer una Cookie (w3schools)
+
+      //       function obtineValor()
+      // {      let texto = getCookie("textoGuardado");
+      // } console.log(texto)
+
+      ///////////////////////////////////////////////////////////////////////////
+      //Añadir un Evento por JS
+      //////////////////////////////////////////////////////////////////////////
+
+      // addEvent(window, "load", miFuncion1);
+
+      // Wenn das load-Ereignis des Fensters eintritt (d.h., wenn die Seite vollständig geladen ist), wird die Funktion miFuncion1 aufgerufen.
+
+      ///////////////////////////////////////////////////////////////////////////
+      //Quitar un Evento por JS: removeEvent(window, "load" , miFuncion1);
       //////////////////////////////////////////////////////////////////////////
 
       ///////////////////////////////////////////////////////////////////////////
-      //FUNCTION
+      //Acceder a Select input
       //////////////////////////////////////////////////////////////////////////
+
+      //comprobamos que se han seleccionado dos elementos
+
+      // function mostrarSeleccion() {
+      //   const selector = document.getElementById("listado");
+      //   const indexSeleccionado = selector.selectedIndex; // Der Index der ersten ausgewählten Option
+      //   const optionsArr = selector.options; // Alle Optionen im Dropdown
+
+      //   if (indexSeleccionado == -1) {
+      //     // Wenn keine Option ausgewählt wurde
+      //     alert("Keine Option ausgewählt.");
+      //   } else {
+      //     // Alle Optionen durchgehen und nur die ausgewählten Optionen anzeigen
+      //     for (let k = 0; k < optionsArr.length; k++) {
+      //       if (optionsArr[k].selected) {
+      //         alert("Ausgewählt: " + optionsArr[k].text);
+      //       }
+      //     }
+      //   }
+      // }
 
       ///////////////////////////////////////////////////////////////////////////
-      //FUNCTION
+      //Crear Expresiones Regulares
       //////////////////////////////////////////////////////////////////////////
 
+      //       Element	Beschreibung	Beispiel
+      // ^ (Anfang der Zeichenkette)	Gibt den Anfang der Zeichenkette an.	^ bedeutet, dass die Zeichenkette am Anfang beginnen muss.
+      // [A-Za-z0-9]	Erlaubte Zeichen: Buchstaben (Groß- und Kleinbuchstaben) und Zahlen.	Q, a, R, 9
+      // +	Bedeutet, dass das vorherige Muster ein- oder mehrfach vorkommen muss.	QRP, abc123
+      // @	Das Zeichen @, das in jeder E-Mail-Adresse vorkommen muss.	@
+      // [A-Za-z0-9]+	Nach dem @ müssen ein oder mehr alphanumerische Zeichen (Buchstaben und Zahlen) folgen.	gmail, hotmail, example123
+      // \.	Ein Literal-Punkt . (der Punkt muss mit einem Backslash \ escaped werden, da der Punkt in Regex eine besondere Bedeutung hat).	\.
+      // [A-Za-z]{2,3}	Nach dem Punkt folgt eine Zeichenkette aus 2 bis 3 Buchstaben, die den Domainnamen (z.B. .com, .org) repräsentiert.	com, net, org
+      // $ (Ende der Zeichenkette)	Gibt das Ende der Zeichenkette an.	$ bedeutet, dass die Zeichenkette hier enden muss.
+
+      //       Regulärer Ausdruck für eine E-Mail-Adresse: ^[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z]{2,3}$
+
+      // Erklärung der regulären Ausdruck:
+      // ^: Die Zeichenkette muss am Anfang beginnen.
+      // [A-Za-z0-9]+: Der Teil vor dem @ besteht aus mindestens einem alphanumerischen Zeichen (Buchstaben und Zahlen).
+      // @: Es muss das @-Zeichen geben, das den lokalen Teil vom Domainnamen trennt.
+      // [A-Za-z0-9]+: Der Domainname nach dem @ muss ebenfalls aus alphanumerischen Zeichen bestehen.
+      // \.: Ein Punkt . muss den Domainnamen vom Domain-Endung (TLD) trennen. Der Punkt wird mit \ (Backslash) escapet.
+      // [A-Za-z]{2,3}: Nach dem Punkt müssen zwischen 2 und 3 Buchstaben folgen, um eine gültige TLD zu repräsentieren (z.B. .com, .org).
+      // $: Die Zeichenkette muss hier enden.
+
+      //       Funktionsweise des regulären Ausdrucks:
+      // ^[A-Za-z0-9]+: Der Anfang der E-Mail-Adresse (vor dem @) besteht aus Buchstaben (Groß- oder Kleinbuchstaben) und/oder Zahlen.
+      // @: Ein notwendiges Trennzeichen zwischen dem lokalen Teil und dem Domainnamen.
+      // [A-Za-z0-9]+: Der Domainname nach dem @ besteht ebenfalls aus Buchstaben und Zahlen.
+      // \.: Ein Punkt, der den Domainnamen von der TLD trennt.
+      // [A-Za-z]{2,3}$: Die TLD (z.B. .com, .org) muss aus 2 bis 3 Buchstaben bestehen.
+
+      ///////////////////////////////////////////////////////////////////////////
+      //Validar una Expresión Regular
+      //////////////////////////////////////////////////////////////////////////
+      // Objeto RegExp.test( texto)
+      // let texto = "nom@gmail.com";
+      // //creamos un objeto de expresión regular
+
+      // let patt1 = new RegExp("^[A-z]{1,5}$");
+      // if (patt1.test(texto)) {
+      //   //comprobamos si se hace.matching con test
+      //   alert("Nombre valido");
+      // } else {
+      //   alert("Nombre invalido");
+      // }
+
+      // texto.match(Expresion Regular)
+      // let texto = "vali";
+      // //creamos la expresión regular como una string
+      // let RegExPattern = /^[^0-9][A-z]{1,5}$/;
+      // if (texto.match(RegExPattern)) {
+      //   //comprobamos el matching con match
+
+      //   alert("Password valido");
+      // } else {
+      //   alert("Password invalido");
+      // }
+
+      ///////////////////////////////////////////////////////////////////////////
+      //DOM
+      //////////////////////////////////////////////////////////////////////////
+
+      // Das DOM (Document Object Model) ist eine Programmierschnittstelle (API), die es ermöglicht, HTML- und XML-Dokumente als strukturierte, objektorientierte Baumstruktur darzustellen und mit ihnen zu interagieren. Es wird von Webbrowsern verwendet, um HTML- und XML-Dokumente zu laden, darzustellen und dynamisch zu verändern.
+
+      //       Manipulation	Beschreibung	Beispiel (JavaScript)
+      // 1. Zugriff auf ein Element	Sucht und greift auf ein HTML-Element zu, basierend auf dem Tag-Namen, der ID oder einer anderen Eigenschaft.	let heading = document.getElementsByTagName("h1")[0];
+      // 2. Ändern des Inhalts eines Elements	Der Text oder HTML-Inhalt eines Elements wird verändert.	heading.innerHTML = "Neuer Titel!";
+      // 3. Erstellen eines neuen Elements und Hinzufügen zum DOM	Ein neues HTML-Element wird erstellt und zu einem bestehenden Element im DOM hinzugefügt.	let newElement = document.createElement("p"); newElement.innerText = "Dies ist ein neuer Absatz."; document.body.appendChild(newElement);
+      // 4. Ereignisse (Events) hinzufügen	Fügt einem Element einen Event-Listener hinzu, um auf Benutzeraktionen (wie Klicks) zu reagieren.	heading.addEventListener("click", function() { alert("Überschrift wurde geklickt!"); });
+
+      ///////////////////////////////////////////////////////////////////////////
+      //Acceder a un elemento del DOM con JS
+      //////////////////////////////////////////////////////////////////////////
+
+      //             Según el valor del atributo name en nodos de un formulario
+      //       let formulario = document.forms["miFormulario"];
+      //       let text = formulario["texto"].value;
+
+      //       Según el valor del atributo id en nodos generales
+      //       let mySpan= document.getElementById('span1');
+      //       let ident =mySpan.id;
+
+      //       firstChild	Gibt den ersten Kindknoten eines Elements zurück.	let span = document.body.firstChild;
+      // Gibt den ersten Knoten von <body> zurück (kann ein Textknoten oder ein Element sein).
+      // lastChild	Gibt den letzten Kindknoten eines Elements zurück.	let last = document.body.lastChild;
+      // Gibt den letzten Knoten von <body> zurück.
+      // nextSibling	Gibt den nächsten Knoten des gleichen Elternelements zurück.	let text = span.nextSibling;
+      // Gibt den nächsten Knoten nach dem Element span zurück.
+      // previousSibling	Gibt den vorherigen Knoten des gleichen Elternelements zurück.	let prev = span.previousSibling;
+      // Gibt den Knoten direkt vor span zurück.
+      // parentNode	Gibt das übergeordnete Element des aktuellen Knotens zurück.	let body = text.parentNode;
+      // Gibt das übergeordnete Element des text-Knotens zurück.
+      // childNodes	Gibt eine NodeList aller Kindknoten eines Elements zurück (einschließlich Textknoten).	let children = document.body.childNodes;
+      // Gibt eine NodeList aller Kindelemente von <body> zurück.
+      // hasChildNodes()	Gibt true zurück, wenn das Element Kindknoten hat, andernfalls false.	let hasChildren = document.body.hasChildNodes();
+      // Gibt true zurück, wenn <body> Kindknoten hat.
+      // getElementById('id')	Sucht nach einem Element anhand seiner ID und gibt es zurück.	let span = document.getElementById('span1');
+      // Gibt das Element mit der ID 'span1' zurück.
+      // getElementsByTagName()	Gibt eine HTMLCollection aller Elemente mit einem bestimmten Tag-Namen zurück.	let divs = document.getElementsByTagName('div');
+      // Gibt alle <div>-Elemente im Dokument zurück.
+      // getElementsByClassName()	Gibt eine HTMLCollection aller Elemente mit einer bestimmten Klasse zurück.	let elements = document.getElementsByClassName('myClass');
+      // Gibt alle Elemente mit der Klasse 'myClass' zurück.
+      // textContent	Gibt den Textinhalt eines Elements oder Knotens zurück.	let text = span.textContent;
+      // Gibt den Textinhalt des span-Elements zurück.
+      // innerHTML	Gibt den HTML-Inhalt eines Elements zurück (inkl. aller HTML-Tags innerhalb des Elements).	let htmlContent = div.innerHTML;
+      // Gibt den HTML-Inhalt des div-Elements zurüc
+
+      //       Eigenschaft / Methode	Typ des Knotens	Beispiel (Element)	Verwendung
+      // getElementById('id')	Spezielles Element (ID)	z. B. <span id="span1">	Ruft ein Element anhand der ID ab.
+      // nodeName	Knotenname	z. B. 'SPAN'	Ruft den Namen des Knotens ab.
+      // tagName	Tag-Name	z. B. 'SPAN'	Ruft den Tag-Namen des Elements ab.
+      // firstChild	Erster Kindknoten	Textknoten oder Element	Ruft den ersten Kindknoten des Elements ab.
+      // nodeValue	Textknoten	z. B. 'Hallo'	Ruft den Textwert des Knotens ab (nur für Textknoten).
+      // innerHTML	HTML-Inhalt des Elements	z. B. Hallo, <span>Welt</span>	Ruft den inneren HTML-Inhalt eines Elements ab.
+      // id	ID des Elements	z. B. 'span1'	Ruft die ID des Elements ab.
+      // style.border	CSS-Stil	z. B. '1px solid black'	Ruft den Wert des border-Stils des Elements ab.
+      // className	Klassennamen des Elements	z. B. 'myClass'	Ruft den Klassennamen des Elements ab.
+
+      // Aktion / Methode	Erklärung	Beispiel
+      // document.createTextNode()	Erstellt einen neuen Textknoten mit dem angegebenen Text.	let newTexto = document.createTextNode("Hola!");
+      // Erstellt einen Textknoten mit dem Text "Hola!".
+      // getElementById()	Holt ein Element aus dem DOM basierend auf seiner ID.	let span1 = document.getElementById('span1');
+      // Holt das Element mit der ID 'span1' zurück.
+      // appendChild()	Fügt einen Knoten als letzten Kindknoten des Ziel-Elements hinzu.	span1.appendChild(newTexto);
+      // Fügt den Textknoten newTexto als letzten Kindknoten von span1 hinzu.
+      // document.createElement()	Erstellt ein neues Element mit dem angegebenen Tag-Namen.	let newElem = document.createElement("SPAN");
+      // Erstellt ein neues <span>-Element.
+      // insertBefore()	Fügt einen Knoten als vorhergehenden Knoten eines anderen Knoten im Ziel-Element ein.	divSaludo.insertBefore(span1, newElem);
+      // Fügt span1 vor dem newElem in das divSaludo-Element ein.
+      // appendChild() für ein Element	Fügt ein neues Element als letzten Kindknoten zu einem bestehenden Element hinzu.	divSaludo.appendChild(newElem);
+      // Fügt das neue Element newElem als letzten Kindknoten von divSaludo hinzu.
+      ///////////////////////////////////////////////////////////////////////////
+      //Eliminar Nodos en el DOM
+      //////////////////////////////////////////////////////////////////////////
+      //Insertamos newNode como hijo de nodoPadre en lugar de oldNode
+      let nodoPadre = divSaludo.replaceChild(newNode, oldNode);
+
+      //Eliminamos del nodoPadre el nodoHijo
+      nodoPadre.removeChild(nodoHijo);
+
+      //       href	Gibt den Wert des href-Attributs eines <a>-Elements zurück.	myLink.href;
+      // Gibt die URL im href-Attribut des Links myLink zurück.
+      // className	Gibt den Klassennamen des Elements zurück.	myLink.className;
+      // Gibt den Klassennamen des myLink-Elements zurück.
+      // id	Gibt die ID des Elements zurück.	myLink.id;
+      // Gibt die ID des myLink-Elements zurück.
+      // getAttribute('attr')	Gibt den Wert eines angegebenen Attributs eines Elements zurück.	let valorAt = myDiv.getAttribute('at');
+      // Gibt den Wert des Attributs 'at' des myDiv-Elements zurück.
+      // createAttribute('name')	Erstellt ein neues Attribut mit dem angegebenen Namen.	let newAtr = document.createAttribute('newAttr');
+      // Erstellt ein neues Attribut mit dem Namen 'newAttr'.
+      // value	Setzt oder ruft den Wert des Attributs ab.	newAtr.value = "12";
+      // Setzt den Wert des neuen Attributs 'newAttr' auf "12".
+      // setAttributeNode(attribute)	Fügt ein Attribut zu einem Element hinzu oder setzt es auf das angegebene Attribut-Objekt.	myDiv.setAttributeNode(newAtr);
+      // Fügt das Attribut newAtr dem myDiv-Element hinzu.
+      // removeAttribute('attr')	Entfernt ein Attribut mit dem angegebenen Namen vom Element.	myDiv.removeAttribute('newAttr');
+      // Entfernt das Attribut 'newAttr' aus dem myDiv-Element.
+      // removeAttributeNode(attributeNode)	Entfernt ein Attribut-Objekt aus einem Element.	myDiv.removeAttributeNode(newAtr);
+      // Entfernt das Attribut-Objekt newAtr aus dem myDiv-Element.
+
+      //       //LISTAR TODOS LOS ATRIBUTOS
+      // let listaAtr=myDiv.attributes;
+
+      // //PROPIEDADES DE LOS ATRIBUTOS
+      // listaAtr[0].name;//id
+
+      // listaAtr[0].value;//saludo
+
+      // listaAtr[0].ownerElement; //[DIV]
+
+      //       •let nodosBody = document.body.childNodes;
+      // •      childNodes y Children
+
+      // •let divsBody = document.body.getElementsByTagName('div');
+
+      // •let elementsBody= document.body.children;
       ///////////////////////////////////////////////////////////////////////////
       //FUNCTION
       //////////////////////////////////////////////////////////////////////////
