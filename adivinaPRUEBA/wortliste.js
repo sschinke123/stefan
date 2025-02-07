@@ -1,22 +1,78 @@
 const listado = [
-  { palabra: "computer", pista: "Elektronisches Gerät" },
-  { palabra: "banane", pista: "Gelbe Frucht" },
-  { palabra: "auto", pista: "Fahrzeug mit vier Rädern" },
-  { palabra: "haus", pista: "Ort zum Wohnen" },
-  { palabra: "schule", pista: "Ort zum Lernen" },
-  { palabra: "sonne", pista: "Leuchtet am Himmel" },
-  { palabra: "wolke", pista: "Weiß und am Himmel" },
-  { palabra: "telefon", pista: "Wird zum Sprechen benutzt" },
-  { palabra: "stuhl", pista: "Zum Sitzen" },
-  { palabra: "fenster", pista: "Durchsichtig in Wänden" },
-  { palabra: "regen", pista: "Wasser vom Himmel" },
-  { palabra: "zug", pista: "Fährt auf Schienen" },
-  { palabra: "garten", pista: "Grüner Außenbereich" },
-  { palabra: "strand", pista: "Neben dem Meer" },
-  { palabra: "tisch", pista: "Zum Essen oder Arbeiten" },
-  { palabra: "hund", pista: "Bester Freund des Menschen" },
-  { palabra: "katze", pista: "Schnurrendes Haustier" },
-  { palabra: "blume", pista: "Pflanze mit schönen Farben" },
-  { palabra: "schrank", pista: "Zum Verstauen von Dingen" },
-  { palabra: "buch", pista: "Zum Lesen" }
+  {
+    palabra: "javascript",
+    pista: "Lenguaje con el que se ha escrito este programa",
+  },
+  {
+    palabra: "android",
+    pista: "S.O. que lleva mi teléfono móvil",
+  },
+  {
+    palabra: "manitou",
+    pista: "Marca de tabaco que fumo",
+  },
+  {
+    palabra: "kombucha",
+    pista: "Té fermentado que esta rico que te mueres",
+  },
+  {
+    palabra: "marihuana",
+    pista: "Planta con cogollos que debería estar legalizada",
+  },
+  {
+    palabra: "javascript",
+    pista: "Lenguaje con el que se ha escrito este programa",
+  },
+  {
+    palabra: "mechero",
+    pista: "Artilugio para encender la cocina",
+  },
+  {
+    palabra: "python",
+    pista: "Una lenguaje de programación que tiene como logo una serpiente",
+  },
+  {
+    palabra: "penne",
+    pista: "Macarrón alargado",
+  },
+  {
+    palabra: "teclado",
+    pista: "Sirve para escribir en un ordenador",
+  },
+  {
+    palabra: "utabon",
+    pista: "Desatasca narices",
+  },
+  {
+    palabra: "ventilador",
+    pista: "Mueve el aire y da vueltas",
+  },
+  {
+    palabra: "php",
+    pista: "Lenguaje de programación del lado del servidor",
+  },
+  {
+    palabra: "silla",
+    pista: "Pones tu culo sobre ella",
+  },
+  {
+    palabra: "yestoestodoamigos",
+    pista: "Página web de unos amigos",
+  },
+  {
+    palabra: "twitter",
+    pista: "Red social con un pájaro",
+  },
+  {
+    palabra: "whatsapp",
+    pista: "Envias mensajes instantaneos desde esta APP",
+  },
+  {
+    palabra: "mogadiscio",
+    pista: "Capital de Somalia",
+  },
+  {
+    palabra: "electricidad",
+    pista: "Su precio está por las nubes",
+  },
 ];
