@@ -81,14 +81,14 @@ function checkWinOrLose() {
 
     if ([...boxes].every(box => box.textContent !== "_")) {
         gameOver = true;
-        let message = msg[Math.floor(Math.random() * msg.length)].replace("${palabra.toUpperCase()}", randomWord.toUpperCase());
+        let message = msg[Math.floor(Math.random() * msg.length)].replace("{palabra}", randomWord.toUpperCase());
         document.querySelector(".mostra").innerHTML = message;
         return;
     }
 
     if (counter === 0) {
         gameOver = true;
-        let message = msgError[Math.floor(Math.random() * msgError.length)].replace("${palabra.toUpperCase()}", randomWord.toUpperCase());
+        let message = msgError[Math.floor(Math.random() * msgError.length)].replace("{palabra}", randomWord.toUpperCase());
         document.querySelector(".mostra").innerHTML = message;
         setTimeout(() => confirm("Jugar más?") ? adivinaPalabra() : window.location.href = "https://www.google.com", 500);
     }
