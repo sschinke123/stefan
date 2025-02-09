@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const carrito = [
+  { nombre: "Monitor 20 Pulgadas", precio: 500 },
+  { nombre: "Televisión 50 Pulgadas", precio: 700 },
+  { nombre: "Tablet", precio: 300 },
+  { nombre: "Auriculares", precio: 200 },
+  { nombre: "Teclado", precio: 50 },
+  { nombre: "Móvil", precio: 500 },
+  { nombre: "Altavoces", precio: 300 },
+  { nombre: "Portátil", precio: 800 },
+];
+
+let total = 0;
+carrito.forEach((producto) => (total += producto.precio));
+console.log(total);
+
+// Método .reduce() actual
+let res = carrito.reduce((total, producto) => total + producto.precio, 0); //0 es el inicio
+console.log(res);
+    </script>
+</body>
+</html>

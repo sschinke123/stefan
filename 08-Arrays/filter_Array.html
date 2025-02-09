@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const carrito = [
+  { nombre: "Monitor 20 Pulgadas", precio: 500 },
+  { nombre: "Televisión 50 Pulgadas", precio: 700 },
+  { nombre: "Tablet", precio: 300 },
+  { nombre: "Auriculares", precio: 200 },
+  { nombre: "Teclado", precio: 50 },
+  { nombre: "Móvil", precio: 500 },
+  { nombre: "Altavoces", precio: 300 },
+  { nombre: "Portátil", precio: 800 },
+];
+
+let r = carrito.filter((producto) => producto.precio > 400 && producto.precio < 600); // Todos los productos mayores de 400 y menores de 600
+let r2 = carrito.filter((producto) => producto.nombre === "Móvil"); // Traerte el Móvil
+let r3 = carrito.filter((producto) => producto.nombre !== "Portátil"); // Todos menos la Portátil
+
+console.log(r);
+console.log(r2);
+console.log(r3);
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Métodos para trabajar con Arrays</title>
+  </head>
+
+  <body>
+    <script>
+
+const mes1 = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"];
+const mes2 = ["Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+const mes3 = mes1.concat(mes2);
+console.log(mes3);
+
+const mes4 = [...mes1, ...mes2]; 
+console.log(mes4);
+
+const mes5 = [...mes1, "Julio"];
+console.log(mes5); 
+
+const mes6 = ["Julio", ...mes1];
+console.log(mes6);
+
+const producto = { producto: "Disco Duro", precio: 300 };
+const mes7 = [...mes1, producto];
+console.log(mes7);
+
+const mes8 = [producto, ...mes1];
+console.log(mes8);
+
+console.log(mes1);
+console.log(mes2);
+
+    </script>
+  </body>
+</html>

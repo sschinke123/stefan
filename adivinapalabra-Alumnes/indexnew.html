@@ -8,11 +8,30 @@
         font-family: Arial, sans-serif;
         text-align: center;
         background-color: orange;
+        
     }
+
+    .darkmode {
+            background-color: black;
+
+            color: white;
+        }
     
     .game-container {
         
         background: white;
+        padding: 20px;
+        
+          
+    }
+
+    #game-container {
+        
+    }
+
+    .dark-game-container {
+        
+        background: rgb(53, 47, 47);
         padding: 20px;
           
     }
@@ -27,7 +46,7 @@
         width: 40px;
         height: 40px;
         margin: 5px;
-        font-size: 24px;
+        /* font-size: 24px; */
         font-weight: bold;
         display: flex;
         align-items: center;
@@ -41,14 +60,17 @@
     }
           
     .mostra {
-        font-size: 18px;
+        /* font-size: 18px; */
         font-weight: bold;
         margin-top: 10px;
     }</style>
 </head>
 <body>
-    <div class="game-container">
+    <div class="game-container" id="game-container">
         <h1>Palabra a adivinar</h1>
+        <button id="darkMode">Dark Mode</button>
+        <button id="increase">+</button>
+    <button id="decrease">-</button>
         
         <div id="container"></div>
         <button id="startGame">Empieza</button>
@@ -62,5 +84,40 @@
     <script src="js/listadoPalabras.js"></script>
     <script src="js/nuevomensajes.js"></script>
     <script src="js/game.js"></script>
+    <script>
+
+const darkmodus = document.getElementById("darkMode")
+const gameContainer = document.getElementById("game-container")
+const increase = document.getElementById("increase");
+const decrease = document.getElementById("decrease");
+const body = document.body;
+
+
+
+let fontSize = 16;
+
+darkmodus.addEventListener("click", switchToDarkModus)
+
+function switchToDarkModus () {
+    body.classList.toggle("darkmode");
+    gameContainer.classList.toggle("dark-game-container");
+
+    }
+
+    increase.addEventListener("click", () => {
+        fontSize += 6;
+        gameContainer.style.fontSize = fontSize + "px";
+    });
+
+    
+    decrease.addEventListener("click", () => {
+        if (fontSize > 10) {
+            fontSize -= 6;
+            gameContainer.style.fontSize = fontSize + "px";
+        }
+    });
+
+
+    </script>
 </body>
 </html>

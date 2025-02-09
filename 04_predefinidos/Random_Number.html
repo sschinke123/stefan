@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random entre 1 y 10 con javascript</title>
+  </head>
+
+  <body>
+    <div id="mostra"></div>
+    <div id="mostra2"></div>
+    <script>
+
+      // Random Number between 1 - 10
+
+      let result = Math.floor(Math.random() * 10 + 1);
+      const mostra = document.getElementById("mostra");
+      mostra.innerHTML = `Número aleatorio entre 1 y 10: ${result}`;
+
+      // Random Number between 0 - 10
+
+      let result2 = Math.floor(Math.random() * 11);
+      const mostra2 = document.getElementById("mostra2");
+      mostra2.innerHTML = `Número aleatorio entre 0 y 10: ${result2}`;
+
+
+
+    </script>
+  </body>
+</html>

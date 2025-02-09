@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<button>Click on me</button>
+
+    <script>
+
+        
+const foco = () => {
+  document.querySelector("button").focus();
+};
+    const detectar_tecla = (e) => {
+  e.key === "Enter"
+    ? alert('has presionado la tecla "Enter"')
+    : alert('no has clicado sobre "Enter"');    
+
+  };  
+
+  document.querySelector("button").onmouseover = foco;
+  document.querySelector("button").onkeyup = detectar_tecla;
+  
+
+
+// keyCode (deprecated) - key (New)  -  13 = Enter
+
+
+
+// const detectar_tecla = (e) => {
+//   e.keyCode == 13 
+//     ? alert('has presionado ta tecla "Enter"')
+//     : alert('no has clikado sobre "Enter"')
+// };
+    </script>
+</body>
+</html>

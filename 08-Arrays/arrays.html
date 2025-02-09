@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introducción a los Arrays</title>
+  </head>
+  <body>
+    <div class="contenido"></div>
+
+    <script>
+      // const primerArray = new Array(6);
+      
+      const primerArray = [100, 200, 300, 400, 500, 600];
+      console.log(primerArray);
+      console.log(primerArray[1]);
+      console.log(primerArray[3]);
+      
+      //segunda presentación
+
+      const segundoArray = new Array();
+      segundoArray[0] = "precio";
+      segundoArray[1] = 300;
+      segundoArray[2] = 500;
+      segundoArray[5] = 600;
+    
+      console.log(segundoArray);
+
+      //tercera presentacion
+           
+      const tercerArray = new Array("primero", "segundo", 0, 25, "cuarenta");
+      console.log(tercerArray);
+
+      //ARRAY can include arrays and objects
+
+     
+      const cuartaArray = ["Hola", 10, true, null, { nombre: "Juan", trabajo: "Programador" }, [1, 2, 3, 4], ];
+      console.log(cuartaArray);
+
+      tercerArray[0] = "Nuevo Mes"; // sustituye el índice [0]
+      
+      tercerArray[7] = "Ultimo Mes";
+      
+      </script>
+  </body>
+</html>

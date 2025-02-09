@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function salir() {
+        location.replace("https://www.w3schools.com");
+      }
+
+      let leave = confirm("Volver a cargar el juego?");
+      if (leave) {
+        location.reload();
+      } else {
+        salir();
+      }
+    </script>
+</body>
+</html>

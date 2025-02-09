@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="mostra"></div>
+    <div id="mostrallista"></div>
+
+    <script>
+let nombre = "Oscar";
+let apellido = "Perolillos";
+const saludo = `Bienvendio ${nombre} ${apellido} a nuestra aplicacion`;
+const mostra = document.querySelector("#mostra");
+const mostrallista = document.querySelector("#mostrallista");
+
+const primavera = "Primavera";
+const verano = "Verano";
+const otono = "Otoño";
+const invierno = "Invierno";
+
+// const estaciones =
+//   "<ul><li>" +
+//   primavera +
+//   "</li><li>" +
+//   verano +
+//   "</li><li>" +
+//   otono +
+//   "</li><li>" +
+//   invierno +
+//   "<li></ul>";
+
+const estaciones = `<ul>
+  <li > ${primavera} </li>
+  <li>${verano} </li>
+    <li>${otono} </li>
+    <li>${invierno} </li>
+    </ul>`;
+
+mostra.innerHTML = saludo;
+mostrallista.innerHTML = estaciones;
+
+</script>
+</body>
+</html>
