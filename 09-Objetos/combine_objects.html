@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+      const productos = {
+        nombre: "Monitor 20 pulgadas",
+        precio: 30,
+        disponible: true,
+      };
+      
+      const medidas = {
+        peso: "1 kg",
+        medida: "1 metro",
+      };
+      
+      // Una forma de hacerlo es con el object method llamado assign
+      
+      const resultados = Object.assign(productos, medidas);
+      
+      // Otra forma de hacerlo que se considera más moderna es con El Spread Operator o Rest Operator, veamoslo en el siguiente video
+      
+      console.log(resultados);
+      // Otra forma de hacerlo que se considera más moderna es con algo llamado el Spread Operator o Rest Operator
+      
+      const resultado = { ...productos, ...medidas };
+      
+      console.log(resultado);
+    </script>
+</body>
+</html>
